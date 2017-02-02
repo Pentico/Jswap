@@ -1,0 +1,6 @@
+{
+  "name": "dbManagement",
+  "version": "0.0.0",
+  "private": true,
+  "main":"./dbManagement.js"
+}
