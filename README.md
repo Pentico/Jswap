@@ -41,6 +41,11 @@ node app.js
 ## Contributing
 If you wish to contribute, Please use clean and try to follow the design process. Thank you.
 
+Discussions
+-----------------
+
+Refer to the issues section: https://github.com/Pentico/Jswap/issues
+
 ## Authors
 
 * **Tuane Morulane** - *Initial work* - [Pentico](https://github.com/Pentico)
