@@ -1,6 +1,6 @@
 # Jswap
 
-A Website where students can have an E-carage sell. 
+A Website where students can have an E-garage sell. 
 
 ### Prerequisites
 
