@@ -5,6 +5,13 @@
 var express = require('express'); 
 var router = express.Router();
 var utilsDir = require('../configUtills/UtilsDir');
+var jswapUtils = require('../config');
+var models = require('../models');
+import UtilsApps from '../configUtills/UtilsApp';
+
+var dbJswap = models.jswap;
+var dbUser = models.jUser;
+var UtilsApp = new UtilsApps();
 
 router.get('/', function(req, res, next){
     res.send({name:'Alfred'});
@@ -50,5 +57,7 @@ router.post('/uploadPicture', function(req, res, next){
     res.send({ responseText: req.file.path }); // You can send any response to the user here
   });
 });
+
+
 
 module.exports = router;

@@ -2,18 +2,16 @@
  * Created by Tuane on 2016/11/03.
  */
 
-'use strict';
-
 var express = require('express');
 var router = express.Router();
 var passport = require('../controllers/authentication');
 import UtilsDir from '../configUtills/UtilsDir';
+import UtilsApps from '../configUtills/UtilsApp';
 var fs = new UtilsDir();
 
 
 var models = require('../models');
 var jswapUtils  = require('../config');
-import UtilsApps from '../configUtills/UtilsApp';
 
 var UtilsApp = new UtilsApps();
 // Getting the models.
@@ -59,6 +57,7 @@ router.post('/signUp', passport.authenticate('local-signup',{
  */
 router.post('/AddItem', function(req, res, next){
 
+    // var jswapUtils  = require('../config');
 
     let data= {
         
@@ -68,17 +67,44 @@ router.post('/AddItem', function(req, res, next){
         dateCreated :Date.now(),
         category    :req.body.category,
         id          : 6451
-    }
-
-      dbJswap.findOne({'jswap.name':jswapUtills.dbAdminjswap},function(err, user){
-
+    };
+    
+     dbJswap.findOne({'jswap.name': jswapUtils.dbAdminjswap},function(err, user){
             if(err){
                 console.log(err);
             }
 
             // User Already Exists ....
             if(user){
-            user.jswap.Items.Electrical_Appliance.push(local)
+           {
+                switch (data.category) {
+                    case 'Electrical_Appliance': 
+                        user.jswap.Items.Electrical_Appliance.push(data);
+                        break;
+                    case 'Books_and_Stationery':
+                        user.jswap.Items.Books_and_Stationery.push(data);
+                        break;
+                     case 'Laptops_and_Gadgets':
+                        user.jswap.Items.Laptops_and_Gadgets.push(data);
+                        break;
+                     case 'Furniture':
+                        user.jswap.Items.Furniture.push(data);
+                        break;  
+                     case 'Jobs':
+                        user.jswap.Items.Jobs.push(data);
+                        break;
+                     case 'Tutors':
+                        user.jswap.Items.Tutors.push(data);
+                        break;
+                     case 'Event':
+                        user.jswap.Items.Event.push(data);
+                        break;
+                    default:
+                        console.log("category doesnt Exists ! User router Error")
+                        break;
+                }
+             }
+
             user.save(function(err){
                 if(err){
                     throw err;
@@ -90,14 +116,41 @@ router.post('/AddItem', function(req, res, next){
                 
              var newUser = new dbJswap();
              newUser.jswap.name = jswapUtills.dbAdminjswap;
-             newUser.jswap.Items.Electrical_Appliance.push(local);
+             {
+
+                switch (data.category) {
+                    case 'Electrical_Appliance':
+                        newUser.jswap.Items.Electrical_Appliance.push(data);
+                        break;
+                    case 'Books_and_Stationery':
+                        newUser.jswap.Items.Books_and_Stationery.push(data);
+                        break;
+                     case 'Laptops_and_Gadgets':
+                        newUser.jswap.Items.Laptops_and_Gadgets.push(data);
+                        break;
+                     case 'Furniture':
+                        newUser.jswap.Items.Furniture.push(data);
+                        break;
+                     case 'Jobs':
+                        newUser.jswap.Items.Jobs.push(data);
+                        break;
+                     case 'Tutors':
+                        newUser.jswap.Items.Tutors.push(data);
+                        break;
+                     case 'Event':
+                        newUser.jswap.Items.Event.push(data);
+                        break;
+                    default:
+                        console.log("category doesnt Exists ! User router Error")
+                        break;
+                }
+             }
              newUser.save(function(err){
                  if(err){
                     throw err;
                  }
                     console.log('Successfully updated');
              });
-
             } 
     }); 
 

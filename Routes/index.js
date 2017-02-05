@@ -39,7 +39,6 @@ router.post('/ItemInCategory', function(req, res, next){
                 return (err); 
             }
             if(item){    
-
                 console.log(item.jswap.Items);
                 let lists = item.jswap.Items;
                 res.send({
@@ -166,14 +165,10 @@ router.post('/getCategory', function(req, res, next){
             if(err){
                 return (err); 
             }
-            if(item){     
-        
+            if(item){             
                 res.send(item.jswap.Items);
-                      
             }
         });
-
-  
 });
 
 
