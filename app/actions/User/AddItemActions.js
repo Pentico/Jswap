@@ -24,8 +24,8 @@ class AddItemActions{
             type:'POST',
             url:'/User/AddItem',
             data:{
-                name:payload.email,
-                price:payload.password,
+                name:payload.name,
+                price:payload.price,
                 category:payload.category,
                 info:payload.info
                 }

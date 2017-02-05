@@ -10,6 +10,16 @@ var passport = require('../controllers/authentication');
 import UtilsDir from '../configUtills/UtilsDir';
 var fs = new UtilsDir();
 
+
+var models = require('../models');
+var jswapUtils  = require('../config');
+import UtilsApps from '../configUtills/UtilsApp';
+
+var UtilsApp = new UtilsApps();
+// Getting the models.
+var dbJswap = models.jswap;
+var dbUser = models.jUser;
+
 router.get('/', function (req, res, next) {
     res.send("In the user page");
     console.log('Hello User');
@@ -47,8 +57,50 @@ router.post('/signUp', passport.authenticate('local-signup',{
  * adding a new Item for sale must be a registred User
  * NB : All the details needed for the item have been submitted!!!
  */
-router.post('/addItem', function(req, res, next){
-    
+router.post('/AddItem', function(req, res, next){
+
+
+    let data= {
+        
+        name        :req.body.name,
+        info        :req.body.info,    
+        price       : req.body.price,
+        dateCreated :Date.now(),
+        category    :req.body.category,
+        id          : 6451
+    }
+
+      dbJswap.findOne({'jswap.name':jswapUtills.dbAdminjswap},function(err, user){
+
+            if(err){
+                console.log(err);
+            }
+
+            // User Already Exists ....
+            if(user){
+            user.jswap.Items.Electrical_Appliance.push(local)
+            user.save(function(err){
+                if(err){
+                    throw err;
+                }
+                console.log('Updated Successfully');
+            });
+                
+            }else{ // User didnt Exists
+                
+             var newUser = new dbJswap();
+             newUser.jswap.name = jswapUtills.dbAdminjswap;
+             newUser.jswap.Items.Electrical_Appliance.push(local);
+             newUser.save(function(err){
+                 if(err){
+                    throw err;
+                 }
+                    console.log('Successfully updated');
+             });
+
+            } 
+    }); 
+
 }); // EOF
 
 /**

@@ -35,10 +35,19 @@ class AddItem extends React.Component {
     handleSubmitItem(event) {
 
         event.preventDefault();
-
+        let name = this.state.name.trim();
+        let price = this.state.price.trim();
+        let info = this.state.info.trim();
+        let category = this.state.category.trim();
         console.log(this.state.name + " : " + this.state.price + " : " + this.state.info + " : " + this.state.category);
 
-    }
+        AddItemActions.AddItemAttempt({
+            name:name,
+            price:price,
+            info:info,
+            category:category
+        })
+    } // EOF
 
     render() {
 
