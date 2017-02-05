@@ -45,6 +45,7 @@ router.post('/signUp', passport.authenticate('local-signup',{
 
 /**
  * adding a new Item for sale must be a registred User
+ * NB : All the details needed for the item have been submitted!!!
  */
 router.post('/addItem', function(req, res, next){
     
