@@ -35,8 +35,10 @@ class AddItem extends React.Component {
     render() {
 
         return (
-                <form>
-                <div className="form-group">
+            <div className="AddItem">
+                <h1> Color of this is what? </h1>
+                <form >
+                 <div className="form-group">
                     <div className="row">
                         <div className="col-md-6">
                             <label>Name : </label>
@@ -60,15 +62,16 @@ class AddItem extends React.Component {
                                 </select>
                         </div>
                     </div>
-                </div>
-                <div className="form-group">
+                 </div>
+                 <div className="form-group">
                     <label>Tell Us More about your product :</label>
                     <input type="text" className="form-control"/>
-                </div>
-                 <div className="form-group">
+                  </div>
+                  <div className="form-group">
                     <button type="submit" className="btn btn-default">Submit</button>
-                </div>
-        </form>
+                 </div>
+             </form>
+          </div>
         );
     } // EOF
 }

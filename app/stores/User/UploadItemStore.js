@@ -4,7 +4,7 @@
  * Created by Tuane on 2016/11/22.
  */
 
-import alt from '../../alt';
+import alt from '../../alt';  
 import UploadItemActions from '../../actions/User/UploadItemActions';
 
 class UploadItemStore {
