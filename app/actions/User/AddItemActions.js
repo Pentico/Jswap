@@ -8,7 +8,35 @@ import {assign} from 'underscore';
 
 class AddItemActions{
     constructor(){
-        this.generateActions();
+        this.generateActions(
+            'addItemSuccess',
+            'addItemFail',
+            'updateName',
+            'updatePrice',
+            'updateInfo',
+            'updateCategory'
+        );
+    } // EOF
+
+    AddItemAttempt(payload) {
+
+         $.ajax({
+            type:'POST',
+            url:'/User/AddItem',
+            data:{
+                name:payload.email,
+                price:payload.password,
+                category:payload.category,
+                info:payload.info
+                }
+        })
+            .done((data)=>{
+                this.actions.addItemSuccess(data.message) 
+            })
+            .fail((data) => {
+                this.actions.addItemFail(data.message);
+            })
+
     } // EOF
 }
 

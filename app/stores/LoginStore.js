@@ -25,12 +25,12 @@ class LoginStore  {
 
 
      onLoginFail(data){
-        console.log('onLoginFail bugger' );
-    }
+        console.log('onLoginFail bugger');
+    } //EOF
 
     onLoginSuccess(data){
-        console.log('onLoginSuccess bugger ');
-    }
+        console.log('onLoginSuccess hihihi');
+    } // EOF
 
 }
 
