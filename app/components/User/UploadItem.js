@@ -8,8 +8,8 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {Link} from 'react-router';
-import UploadItemStore from '../../stores/MainContent/UploadItemStore';
-import UploadItemActions from '../../actions/MainContent/UploadItemActions';
+import UploadItemStore from '../../stores/User/UploadItemStore';
+import UploadItemActions from '../../actions/User/UploadItemActions';
 import DropzoneComponent from 'react-dropzone-component';
 
 

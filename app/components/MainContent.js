@@ -9,7 +9,7 @@ import {Link} from 'react-router';
 import MainContentStore from '../stores/MainContentStore';
 import MainContentActions from '../actions/MainContentActions';
 import Item from './MainContent/Item';
-import UploadItem from './MainContent/UploadItem';
+
 
 class MainContent extends React.Component {
     constructor(props) { 
@@ -34,15 +34,17 @@ class MainContent extends React.Component {
     
     render() {                 
         return (
-            <UploadItem/>           
+                    <div >  
+                      {this.props.handleItems.map((value,key) => <Item Id={key} value={value}/>)}
+                    </div>
            );
     }
 }
 
 export default MainContent;
 
-/**
- * <div >  
- *   {this.props.handleItems.map((value,key) => <Item Id={key} value={value}/>)}
- * </div>
- */
+// /**
+//  * <div >  
+//  *   {this.props.handleItems.map((value,key) => <Item Id={key} value={value}/>)}
+//  * </div>
+//  */

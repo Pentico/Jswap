@@ -5,7 +5,7 @@
  */
 
 import alt from '../../alt';
-import UploadItemActions from '../../actions/MainContent/UploadItemActions';
+import UploadItemActions from '../../actions/User/UploadItemActions';
 
 class UploadItemStore {
     constructor(){

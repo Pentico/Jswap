@@ -152,7 +152,7 @@ router.post('/getCategory', function(req, res, next){
 
    var allCategorys = [
         {'jswap.Items.Electrical_Appliance':1 },
-        {'jswap.Items.Books_and_Stationery.':1 }, 
+        {'jswap.Items.Books_and_Stationery':1 }, 
         {'jswap.Items.Laptops_and_Gadgets': 1},
         {'jswap.Items.Furniture': 1 },
         {'jswap.Items.Jobs': 1 },
