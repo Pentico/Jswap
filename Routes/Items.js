@@ -60,8 +60,6 @@ router.post('/uploadPicture', function(req, res, next){
 
 router.post('/AddItem', function(req, res, next){
 
-    // var jswapUtils  = require('../config');
-
     let data= {
         
         name        :req.body.name,
@@ -158,7 +156,6 @@ router.post('/AddItem', function(req, res, next){
 
 }); // EOF
 
-
 /**
  * Deleting an Item from the server.
  *  TODO slice the string name so that no issue can occur..
@@ -174,6 +171,5 @@ router.post('/removeItem',function(req, res, next){
   fs.onDelete('uploads/'+ req.body.item);
 
 }); // EOF
-
 
 module.exports = router;
