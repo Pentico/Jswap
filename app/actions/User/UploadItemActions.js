@@ -26,7 +26,7 @@ class UploadItemActions {
         console.log('on removeItem ajax call');
      $.ajax({
             type:'POST',
-            url:'/User/removeItem',
+            url:'/Items/removeItem',
             data:{
                 item:payload.name
             }

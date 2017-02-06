@@ -22,7 +22,7 @@ class AddItemActions{
 
          $.ajax({
             type:'POST',
-            url:'/User/AddItem',
+            url:'/Items/AddItem',
             data:{
                 name:payload.name,
                 price:payload.price,
