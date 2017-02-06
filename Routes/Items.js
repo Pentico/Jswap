@@ -58,7 +58,12 @@ router.post('/uploadPicture', function(req, res, next){
   });
 });
 
+/**
+ * Add Item to be sold . 
+ */
 router.post('/AddItem', function(req, res, next){
+
+    UtilsApp.onCheckAuthentication(req,res,next,'/');
 
     let data= {
         
@@ -165,7 +170,10 @@ router.post('/AddItem', function(req, res, next){
 
 /// Currently del only pictures 
 
+
 router.post('/removeItem',function(req, res, next){
+
+
     console.log('on post removeItem server');
     console.log(req.body.item); 
   fs.onDelete('uploads/'+ req.body.item);

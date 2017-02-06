@@ -51,9 +51,6 @@ router.post('/signUp', passport.authenticate('local-signup',{
 
 })); // EOF
 
-/**
- * adding a new Item for sale must be a registred User
- * NB : All the details needed for the item have been submitted!!!
- */
+
 
 module.exports = router;
