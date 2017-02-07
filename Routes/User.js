@@ -51,6 +51,21 @@ router.post('/signUp', passport.authenticate('local-signup',{
 
 })); // EOF
 
+/**
+ * authenticate  
+ */
+  router.post('/authentication', function(req,res,next){
 
+      console.log('In authenticate');
+      if (req.user){
+            next();
+        } else {
+            console.log('In authenticate else');
+            res.send({authenticate:'successful'});
+        }
+
+        console.log('In authenticate out');
+  })
+        
 
 module.exports = router;

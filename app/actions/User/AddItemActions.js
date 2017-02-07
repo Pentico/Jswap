@@ -14,7 +14,10 @@ class AddItemActions{
             'updateName',
             'updatePrice',
             'updateInfo',
-            'updateCategory'
+            'updateCategory',
+            'authenticationSuccess',
+            'authenticationFail'
+
         );
     } // EOF
 
@@ -35,6 +38,24 @@ class AddItemActions{
             })
             .fail((data) => {
                 this.actions.addItemFail(data.message);
+            })
+
+    } // EOF
+
+     Authentication() {
+
+         $.ajax({
+            type:'POST',
+            url:'/User/authentication'
+        })
+            .done((data)=>{
+                this.actions.authenticationSuccess(data.message)
+                if(data.Authenticatte !=='successful' ){
+
+                } 
+            })
+            .fail((data) => {
+                this.actions.authenticationFail(data.message);
             })
 
     } // EOF

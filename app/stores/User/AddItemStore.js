@@ -41,5 +41,13 @@ class AddItemStore {
     onAddItemSuccess(data) {
         console.log('onAddItemSuccess hihihi');
     }
+
+    onAuthenticationSuccess(data) {
+        console.log('onAuthenticationSuccess');
+    } // EOF
+
+    onAuthenticationFail(data) {
+        console.log('onAuthenticationFail');
+    } // EOF
 }
 export default alt.createStore(AddItemStore);

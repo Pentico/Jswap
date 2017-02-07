@@ -21,7 +21,8 @@ class AddItem extends React.Component {
 
      componentDidMount() {
         AddItemStore.listen(this.onChange);
-
+        AddItemActions.Authentication();
+        console.log('componentDidMount');
     } // EOF
 
       componentWillUnmount() {

@@ -9,14 +9,7 @@ class UtilsApp {
         return categoryName[index];
     }
 
-    onCheckAuthentication(req, res, next, login){
-        
-        if (req.user){
-            next();
-        } else {
-            res.redirect('$login');
-        }
-    }
+  
 }
 
 export default UtilsApp;
