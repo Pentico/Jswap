@@ -52,7 +52,7 @@ class AddItemActions{
             .done((data)=>{
                 this.actions.authenticationSuccess(data.message)
                 if(data.message){
-                    window.location = '/User'; // Added Successfully
+                    window.location = '/User'; // Added Successfully  // This is Bad most go to AddItemStore
                 }else {
                     window.location = '/Login';  // Not logged In
                 }

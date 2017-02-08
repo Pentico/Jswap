@@ -45,11 +45,12 @@ class NavbarActions {
             url:'/Router'
         })
             .done((data)=>{
-                this.actions.clickEventSuccess(data.message, payload)
+                data.ref = ref;
+                this.actions.clickEventSuccess(data)
                 
             })
             .fail((data) => {
-                this.actions.clickEventFail(data.message);
+                this.actions.clickEventFail(data);
             
             })
 

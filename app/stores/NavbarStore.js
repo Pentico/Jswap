@@ -55,8 +55,42 @@ class NavbarStore {
 
     // handle Route
     onClickEventSuccess(data){
-        
-    }
+
+        if(data.message){
+            switch (data.ref) {
+            case 0:
+                window.location = '/';
+                break;
+            case 1:
+                window.location = '/Bids';
+                break;
+            case 2:
+                window.location = '/User';
+                break;
+            case 3:
+                window.location = '/AddItem';
+                break;
+            case 4:
+                window.location = '/User';  
+                break;
+            default:
+                console.log('mas tarde');
+                break;
+            }
+        }else {
+            switch (data.ref) {
+                case 0:
+                    window.location = '/'; 
+                    break;
+                case 1:
+                    window.location = '/Bids'
+                default:
+                console.log('perdon');
+                    break;
+            }
+        }
+    } // EOF
+
 }
 
 export default alt.createStore(NavbarStore);

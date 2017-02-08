@@ -49,11 +49,11 @@ class Navbar extends React.Component {
     } // EOF
 
     handleClickEvent(ref, event){
-        
+
         event.preventDefault();
-        console.log(ref);
-        console.log("ref");
-        return ref;
+        NavbarActions.clickEvent({
+            ref:ref
+        })
 
     }       
 
