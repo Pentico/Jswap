@@ -63,8 +63,6 @@ router.post('/uploadPicture', function(req, res, next){
  */
 router.post('/AddItem', function(req, res, next){
 
-    UtilsApp.onCheckAuthentication(req,res,next,'/');
-
     let data= {
         
         name        :req.body.name,
@@ -72,7 +70,7 @@ router.post('/AddItem', function(req, res, next){
         price       : req.body.price,
         dateCreated :Date.now(),
         category    :req.body.category,
-        id          : 6451
+        id          : 6451   // auto generate this...
     };
     
      dbJswap.findOne({'jswap.name': jswapUtils.dbAdminjswap},function(err, user){

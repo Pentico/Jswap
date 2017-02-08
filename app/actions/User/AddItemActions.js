@@ -4,6 +4,7 @@
  */
 
 import alt from '../../alt';
+import { browserHistory } from 'react-router';
 import {assign} from 'underscore';
 
 class AddItemActions{
@@ -50,9 +51,7 @@ class AddItemActions{
         })
             .done((data)=>{
                 this.actions.authenticationSuccess(data.message)
-                if(data.Authenticatte !=='successful' ){
-
-                } 
+                browserHistory.push('/Login');
             })
             .fail((data) => {
                 this.actions.authenticationFail(data.message);

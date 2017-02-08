@@ -60,11 +60,8 @@ router.post('/signUp', passport.authenticate('local-signup',{
       if (req.user){
             next();
         } else {
-            console.log('In authenticate else');
             res.send({authenticate:'successful'});
         }
-
-        console.log('In authenticate out');
   })
         
 
