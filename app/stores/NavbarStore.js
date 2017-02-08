@@ -97,9 +97,7 @@ class NavbarStore {
                 case 1:
                     window.location = '/Bids'
                     break;
-                
                 default:
-                
                 console.log('perdon');
                     break;
             }

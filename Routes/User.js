@@ -30,7 +30,6 @@ router.get('/logout',function (req, res, next) {
 
 // TODO removing a User
 router.delete('/delete', function (req, res) {
-
     /*res.render('users', {title:"User removed"});*/
 }); // EOF
 

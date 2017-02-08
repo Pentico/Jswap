@@ -8,11 +8,13 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
 
     local            : {
-        email        : String,
+        email        : { type: String, unique: true },
         password     : String,
+        passwordResetToken: String,
+        passwordResetExpires: Date,
         name         : String,
         Items        : [
                  {
@@ -22,11 +24,17 @@ var userSchema = new mongoose.Schema({
                     dateCreated  : Date,
                     category     : String
                 }
-            ]
+            ],
+        profile: {
+            name: String,
+            gender: String,
+            location: String,
+            website: String,
+            picture: String
+        }
     },
 
-
-});
+},{ timestamps: true });
 
 // methods ======================
 // generating a hash
@@ -39,5 +47,20 @@ userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
 };
 
+/**
+ * Helper method for getting users gravatar
+ * */
+userSchema.methods.gravatar = function gravatar(size){
+    if (!size){
+        size = 200;
+    }
+    if (!this.email) {
+        return `https://gravatar.com/avatar/?s=${size}&d=retro`;
+    }
+        const md5 = crypto.createHash('md5').update(this.email).digest('hex');
+        return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
+};
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;

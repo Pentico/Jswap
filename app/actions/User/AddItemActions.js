@@ -56,7 +56,7 @@ class AddItemActions{
                 this.actions.authenticationFail(data.message);
             })
 
-    } // EOF
+    } // EOF 
 }
 
 export default alt.createActions(AddItemActions);

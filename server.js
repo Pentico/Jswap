@@ -37,9 +37,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
  /// Mongoose Connectivity
+ mongoose.Promise = global.Promise;
 mongoose.connect(config.database);
 mongoose.connection.on('error', function () {
     console.log('Error: could not connect to MongoDB. Please make sure its running!!');
+    process.exit();
 });
 
 
