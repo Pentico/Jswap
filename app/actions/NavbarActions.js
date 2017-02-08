@@ -41,12 +41,15 @@ class NavbarActions {
     clickEvent(payload){
 
   	$.ajax({
-            type:'GET',
-            url:'/Router'
+            type:'POST',
+            url:'/index/router'
         })
             .done((data)=>{
-                data.ref = ref;
-                this.actions.clickEventSuccess(data)
+                
+                this.actions.clickEventSuccess({
+                    message:data.message,
+                    ref : payload.ref
+                })
                 
             })
             .fail((data) => {

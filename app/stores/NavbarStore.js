@@ -84,7 +84,22 @@ class NavbarStore {
                     break;
                 case 1:
                     window.location = '/Bids'
+                    break;
+                case 2:
+                    window.location = '/login'
+                    break;
+                case 3:
+                    window.location = '/Login'
+                    break;
+                case 1:
+                    window.location = '/Bids'
+                    break;
+                case 1:
+                    window.location = '/Bids'
+                    break;
+                
                 default:
+                
                 console.log('perdon');
                     break;
             }

@@ -43,6 +43,7 @@ router.post('/login',
 })); // EOF
 
 
+//TODO make this send a message to front weather it was successful or not
 router.post('/signUp', passport.authenticate('local-signup',{
 
     successRedirect : '/', // redirect to the secure profile section

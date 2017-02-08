@@ -32,15 +32,20 @@ class AddItemStore {
 
     onUpdateCategory(event) {
         this.category = event.target.value;
-    }
+    } // EOF
 
     onAddItemFail(data) {
         console.log('onAddItemFail bugger');
     } // EOF
 
     onAddItemSuccess(data) {
-        console.log('onAddItemSuccess hihihi');
-    }
+
+        if(data.message){
+                 window.location = '/User'; // Added Successfully  // This is Bad most go to AddItemStore
+            }else {
+                 window.location = '/Login';  // Not logged In
+            }
+    } // EOF
 
     onAuthenticationSuccess(data) {
         console.log('onAuthenticationSuccess');
