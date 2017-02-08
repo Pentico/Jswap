@@ -13,8 +13,16 @@ var dbJswap = models.jswap;
 var dbUser = models.jUser;
 var UtilsApp = new UtilsApps();
 
+
+
 router.get('/', function(req, res, next){
-    res.send({name:'Alfred'});
+
+    if(UtilsApp.onAuthentication()){
+
+    }else{
+
+    }
+    
 }); // EOF
 
 router.get('/List', function(req, res, next){
@@ -63,7 +71,9 @@ router.post('/uploadPicture', function(req, res, next){
  */
 router.post('/AddItem', function(req, res, next){
 
-    let data= {
+     if(UtilsApp.onAuthentication(req.user)){
+
+         let data= {
         
         name        :req.body.name,
         info        :req.body.info,    
@@ -156,6 +166,10 @@ router.post('/AddItem', function(req, res, next){
              });
             } 
     }); 
+}else{
+    
+    console.log('not a User');
+    }
 
 }); // EOF
 

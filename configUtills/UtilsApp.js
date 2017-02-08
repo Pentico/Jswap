@@ -9,6 +9,19 @@ class UtilsApp {
         return categoryName[index];
     }
 
+    /**
+     * Check if User Logged index
+     * 
+     * */
+     
+    onAuthentication(user){
+        
+        if(user){
+            return true;
+        }else {
+            return false;
+        }
+    }
   
 }
 

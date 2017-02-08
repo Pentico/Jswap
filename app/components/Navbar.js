@@ -48,7 +48,11 @@ class Navbar extends React.Component {
         console.log('handleLogout');
     } // EOF
 
-       
+    handleClickEvent(ref, event){
+        event.preventDefault();
+        
+
+    }       
 
     render() {
         return (
@@ -80,10 +84,10 @@ class Navbar extends React.Component {
           </div>
                 <div id='navbar' className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/Register'>Bids</Link></li>
-                        <li><Link to='/Login'>My Account</Link></li>
-                        <li><Link to='/AddItem'>Add Item</Link></li>
+                        <li><a href={this.handleClickEvent.bind(this,0)}>Home</a></li>
+                        <li><a>Bids</a></li>
+                        <li><a>My Account</a></li>
+                        <li><a>Add Item</a></li>
                     </ul>
                     
                 </div>

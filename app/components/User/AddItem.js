@@ -42,8 +42,6 @@ class AddItem extends React.Component {
         let category = this.state.category.trim();
         console.log(this.state.name + " : " + this.state.price + " : " + this.state.info + " : " + this.state.category);
 
-        window.location = '/';
-
         AddItemActions.AddItemAttempt({
             name:name,
             price:price,

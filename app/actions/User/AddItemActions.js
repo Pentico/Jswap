@@ -51,7 +51,11 @@ class AddItemActions{
         })
             .done((data)=>{
                 this.actions.authenticationSuccess(data.message)
-                browserHistory.push('/Login');
+                if(data.message){
+                    window.location = '/User'; // Added Successfully
+                }else {
+                    window.location = '/Login';  // Not logged In
+                }
             })
             .fail((data) => {
                 this.actions.authenticationFail(data.message);
