@@ -171,5 +171,21 @@ router.post('/getCategory', function(req, res, next){
         });
 });
 
+/**
+ * Checks if the current User is authorized to go to route..
+ * */
+router.post('/Router', function(req, res, next){
+
+    if(req.user){
+        res.send({
+            message:true
+        });
+    }else{
+           res.send({
+            message:false
+        });
+    }
+});
+
 
 module.exports = router;

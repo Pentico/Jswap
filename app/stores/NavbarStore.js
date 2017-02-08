@@ -48,7 +48,15 @@ class NavbarStore {
         console.log("onLoginSignUp");
     }
 
-    
+    // handler Server Error
+    onClickEventFail(data){
+        // TODO server Error handle
+    } // EOF
+
+    // handle Route
+    onClickEventSuccess(data){
+        
+    }
 }
 
 export default alt.createStore(NavbarStore);

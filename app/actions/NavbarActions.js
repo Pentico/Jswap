@@ -15,7 +15,9 @@ class NavbarActions {
             'getCharacterCountFail',
             'loginSign',
             'logoutSuccess',
-        	'logoutFail'
+        	'logoutFail',
+            'clickEventSuccess',
+            'clickEventFail'
         );
     }
 
@@ -32,6 +34,23 @@ class NavbarActions {
             .fail((data) => {
                 this.actions.logoutFail(data.message);
                 console.log('Hello failure');
+            })
+
+  } // EOF
+
+    clickEvent(payload){
+
+  	$.ajax({
+            type:'GET',
+            url:'/Router'
+        })
+            .done((data)=>{
+                this.actions.clickEventSuccess(data.message, payload)
+                
+            })
+            .fail((data) => {
+                this.actions.clickEventFail(data.message);
+            
             })
 
   } // EOF

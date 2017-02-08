@@ -49,8 +49,11 @@ class Navbar extends React.Component {
     } // EOF
 
     handleClickEvent(ref, event){
-        event.preventDefault();
         
+        event.preventDefault();
+        console.log(ref);
+        console.log("ref");
+        return ref;
 
     }       
 
@@ -84,10 +87,10 @@ class Navbar extends React.Component {
           </div>
                 <div id='navbar' className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
-                        <li><a href={this.handleClickEvent.bind(this,0)}>Home</a></li>
-                        <li><a>Bids</a></li>
-                        <li><a>My Account</a></li>
-                        <li><a>Add Item</a></li>
+                        <li><a onClick={this.handleClickEvent.bind(this,0)}>Home</a></li>
+                        <li><a onClick={this.handleClickEvent.bind(this,1)}>Bids</a></li>
+                        <li><a onClick={this.handleClickEvent.bind(this,2)}>My Account</a></li>
+                        <li><a onClick={this.handleClickEvent.bind(this,3)}>Add Item</a></li>
                     </ul>
                     
                 </div>
