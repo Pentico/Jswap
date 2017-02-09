@@ -13,7 +13,6 @@ class NavbarStore {
         this.onlineUsers = 0;
         this.ajaxAnimationClass = '';
         this.userSession = false;
-        this.login_SignUp_Componet = Logout; // TODO FIx this ...
         this.message1 ="L";
         this.message0 = " Sing ";
 
@@ -102,6 +101,17 @@ class NavbarStore {
                     break;
             }
         }
+    } // EOF
+
+
+     onAuthenticationSuccess(data) {
+        this.userSession = data.message;
+    } // EOF
+
+    onAuthenticationFail(data) {
+        this.userSession = false;
+        // TODO send a message of the error~!!!!!
+        console.log('onAuthenticationFail');
     } // EOF
 
 }

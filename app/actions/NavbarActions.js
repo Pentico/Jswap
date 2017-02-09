@@ -17,7 +17,9 @@ class NavbarActions {
             'logoutSuccess',
         	'logoutFail',
             'clickEventSuccess',
-            'clickEventFail'
+            'clickEventFail',
+            'authenticationSuccess',
+            'authenticationFail'
         );
     }
 
@@ -58,6 +60,21 @@ class NavbarActions {
             })
 
   } // EOF
+
+  Authentication() {
+
+         $.ajax({
+            type:'POST',
+            url:'/User/authentication'
+        })
+            .done((data)=>{
+                this.actions.authenticationSuccess(data.message)
+            })
+            .fail((data) => {
+                this.actions.authenticationFail(data.message);
+            })
+
+    } // EOF 
     
 }
 
