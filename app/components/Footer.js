@@ -41,25 +41,11 @@ class Footer extends React.Component {
 
         return (
             <footer>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-sm-4'>
-                            <h3 className='lead'><strong>Information</strong> and <strong>Copyright</strong></h3>
-                            <p>Powered by <strong>Zero Corporations </strong>,</p>
-                            <p>All Rights Reserved</p>
-                            <p>© 2016 Jswap </p>
-                        </div>
-                        <div className='col-sm-4 '>
-                            <h3 className='lead'><strong>Sponsors</strong></h3>
-                            <p> BoilerPlate</p>
-                        </div>
-                        <div className='col-sm-4 '>
-                            <h3 className='lead'><strong>Details</strong></h3>
-                           <p><strong> Help and Contact Us </strong>,</p>
-                           <p><strong> Terms of Use</strong>,</p>
-                           <p><strong>Zero Corporations </strong>,</p>
-                        </div>
-                    </div>
+                <div className='container text-center'>
+                    <p className='pull-left'>© 2017  Jswap Company, Inc. All Rights Reserved</p>
+                    <ul className='pull-right list-inline'>
+                        <li><a href="">MTArain Corporations</a></li>
+                    </ul>
                 </div>
             </footer>
         );
@@ -68,3 +54,26 @@ class Footer extends React.Component {
 }
 
 export default Footer;
+
+// <footer>
+//                 <div className='container'>
+//                     <div className='row'>
+//                         <div className='col-sm-4'>
+//                             <h3 className='lead'><strong>Information</strong> and <strong>Copyright</strong></h3>
+//                             <p>Powered by <strong>Zero Corporations </strong>,</p>
+//                             <p>All Rights Reserved</p>
+//                             <p>© 2016 Jswap </p>
+//                         </div>
+//                         <div className='col-sm-4 '>
+//                             <h3 className='lead'><strong>Sponsors</strong></h3>
+//                             <p> BoilerPlate</p>
+//                         </div>
+//                         <div className='col-sm-4 '>
+//                             <h3 className='lead'><strong>Details</strong></h3>
+//                            <p><strong> Help and Contact Us </strong>,</p>
+//                            <p><strong> Terms of Use</strong>,</p>
+//                            <p><strong>Zero Corporations </strong>,</p>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </footer>
