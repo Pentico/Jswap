@@ -12,7 +12,7 @@ class Navbar extends React.Component {
     }
 
     componentWillMount() {
-        NavbarActions
+        NavbarActions.Authentication();
     }
     componentDidMount() {
         NavbarStore.listen(this.onChange);
@@ -58,7 +58,6 @@ class Navbar extends React.Component {
         NavbarActions.clickEvent({
             ref:ref
         })
-
     }      
 
     LoginDiv(){
@@ -77,13 +76,6 @@ class Navbar extends React.Component {
 
         const isLoggedIn =  this.state.userSession;
 
-        let customDiv = null;
-    
-        if(isLoggedIn){
-            customDiv = <Logout/>
-        }else {
-            customDiv =<LoginDiv/>
-        }
         return (
             <nav className='navbar navbar-default navbar-fixed-top'>
                 <div className='container'>
@@ -107,8 +99,15 @@ class Navbar extends React.Component {
                                 <li><a onClick={this.handleClickEvent.bind(this,5)}>About</a></li>      
                             </ul>
 
-                            
-                            <Logout/>
+                            {isLoggedIn ? (
+                                <Logout/>
+                            ) : (
+
+                            <ul className='nav navbar-nav navbar-right'>
+                                <li><a onClick={this.handleClickEvent.bind(this,3)}>Add Item</a></li>
+                                <li><a onClick={this.handleClickEvent.bind(this,6)}>Login</a></li>
+                            </ul>
+                            )}
                       </div>
                 </div>
             </nav>

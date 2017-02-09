@@ -63,7 +63,7 @@ class NavbarActions {
 
   Authentication() {
 
-         $.ajax({
+        $.ajax({
             type:'POST',
             url:'/User/authentication'
         })
