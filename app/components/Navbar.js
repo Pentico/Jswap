@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import NavbarStore from '../stores/NavbarStore';
 import NavbarActions from '../actions/NavbarActions';
+import Logout from './Navbar/Logout';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -86,9 +87,11 @@ class Navbar extends React.Component {
                                  <li><a onClick={this.handleClickEvent.bind(this,2)}>My Account</a></li>
                                  <li><a onClick={this.handleClickEvent.bind(this,6)}>Login</a></li>
                             </ul>
+                            <Logout/>
                       </div>
                 </div>
             </nav>
+            
         );
     } //EOF
 }

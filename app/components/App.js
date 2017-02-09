@@ -5,7 +5,6 @@
 import React from  'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Search from './Search';
 
 class App extends React.Component {
     render() {
