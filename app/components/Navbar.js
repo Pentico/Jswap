@@ -12,7 +12,7 @@ class Navbar extends React.Component {
     }
 
     componentWillMount() {
-        NavbarActions.Authentication();
+        
     }
     componentDidMount() {
         NavbarStore.listen(this.onChange);
@@ -26,9 +26,9 @@ class Navbar extends React.Component {
         //     NavbarActions.updateOnlineUsers(data);
         // });
 
-        // $(document).ajaxStart(() => {
-        //     NavbarActions.updateAjaxAnimation('fadeIn');
-        // });
+        $(document).ajaxStart(() => {
+            NavbarActions.Authentication();
+        });
 
         // $(document).ajaxComplete(() => {
         //     setTimeout(() => {
