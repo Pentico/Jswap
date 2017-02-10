@@ -55,6 +55,7 @@ class NavbarStore {
     // handle Route
     onClickEventSuccess(data){
 
+        // data.message return true if user logged in else false.
         if(data.message){
             switch (data.ref) {
             case 0:
@@ -70,7 +71,10 @@ class NavbarStore {
                 window.location = '/AddItem';
                 break;
             case 4:
-                window.location = '/User';  
+                window.location = '/Contacts';  
+                break;
+             case 5:
+                window.location = '/About';  
                 break;
             default:
                 console.log('mas tarde');
@@ -90,11 +94,11 @@ class NavbarStore {
                 case 3:
                     window.location = '/Login'
                     break;
-                case 1:
-                    window.location = '/Bids'
+                case 5:
+                    window.location = '/About'
                     break;
-                case 1:
-                    window.location = '/Bids'
+                case 6:
+                    window.location = '/Login'
                     break;
                 default:
                 console.log('perdon');

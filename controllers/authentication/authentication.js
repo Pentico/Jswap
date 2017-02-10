@@ -73,7 +73,7 @@ passport.use('local-login', new LocalStrategy({
     },
     function (req, email, password, done) {
 
-        User.findOne({'local.email':email}, function (err, user) {
+        User.findOne({'local.email':email}, function (err, user, info) {
 
             if(err) {
                 return done(err);
@@ -90,7 +90,7 @@ passport.use('local-login', new LocalStrategy({
             }
 
             // Successful
-            return done(null, user);
+            return done(null, user, info);
 
         });
 

@@ -29,7 +29,8 @@ class LoginStore  {
     } //EOF
 
     onLoginSuccess(data){
-        console.log('onLoginSuccess hihihi');
+        console.log(data.id);
+        console.log(data.username);
     } // EOF
 
 }

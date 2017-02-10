@@ -34,19 +34,40 @@ router.delete('/delete', function (req, res) {
 }); // EOF
 
 // Login in
-router.post('/login',
-    passport.authenticate('local-login', {
-        successRedirect:'/',
-        failureRedirect:'/you',
-        failureFlash : true
-})); // EOF
+// router.post('/login',
+//     passport.authenticate('local-login', {
+//         successRedirect:'/',
+//         failureRedirect:'/Login',
+//         failureFlash : true
+// })); // EOF
+
+router.post('/login', function(req, res,next){
+    passport.authenticate('local-login',function(err, user, info){
+        if(err) { return next(err);}
+
+        if(!user) {
+            return res.send({message:user});
+            
+        }
+
+        req.logIn(user, function(err) {
+            if(err) {
+                return next(err);
+            }
+            return res.send({
+                message:user,
+                username:user.username
+            })
+        });
+    })(req, res, next);
+}); // EOF
 
 
 //TODO make this send a message to front weather it was successful or not
 router.post('/signUp', passport.authenticate('local-signup',{
 
     successRedirect : '/', // redirect to the secure profile section
-    failureRedirect : '/name', // redirect back to the signup page if there is an error
+    failureRedirect : '/SignUp', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
 
 })); // EOF
