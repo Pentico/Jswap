@@ -41,28 +41,54 @@ router.delete('/delete', function (req, res) {
 //         failureFlash : true
 // })); // EOF
 
-router.post('/login', function(req, res,next){
-    passport.authenticate('local-login',function(err, user, info){
-        if(err) { return next(err);}
+// router.post('/login',
+//   passport.authenticate('local-login'),
+//   function(req, res) {
+//     // If this function gets called, authentication was successful.
+//     // `req.user` contains the authenticated user.
+//     res.send({
+//         message:true,
+//         User:req.user
+//     });
+//   });
 
-        if(!user) {
-            return res.send({message:user});
-            
-        }
-
+  router.post('/login', function(req, res, next) {
+    passport.authenticate('local-login', function(err, user, info) {
+        if (err) { return next(err); }
+        if (!user) { return res.send({
+            message : false
+        }); }
         req.logIn(user, function(err) {
-            if(err) {
-                return next(err);
-            }
-            res.json({
-            success: true,
-            message: 'You have successfully logged in!',
-            token,
-            user: userData
-            });
+        if (err) { return next(err); }
+        return res.send({
+            message:true
+        });
         });
     })(req, res, next);
-}); // EOF
+});
+
+// router.post('/login', function(req, res,next){
+//     passport.authenticate('local-login',function(err, user, info){
+//         if(err) { return next(err);}
+
+//         if(!user) {
+//             return res.send({message:user});
+            
+//         }
+
+//         req.logIn(user, function(err) {
+//             if(err) {
+//                 return next(err);
+//             }
+//             res.json({
+//             success: true,
+//             message: 'You have successfully logged in!',
+//             token,
+//             user: userData
+//             });
+//         });
+//     })(req, res, next);
+// }); // EOF
 
 
 //TODO make this send a message to front weather it was successful or not
