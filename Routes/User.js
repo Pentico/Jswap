@@ -54,10 +54,12 @@ router.post('/login', function(req, res,next){
             if(err) {
                 return next(err);
             }
-            return res.send({
-                message:user,
-                username:user.username
-            })
+            res.json({
+            success: true,
+            message: 'You have successfully logged in!',
+            token,
+            user: userData
+            });
         });
     })(req, res, next);
 }); // EOF
