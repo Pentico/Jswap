@@ -41,14 +41,14 @@ class Profile extends React.Component {
                             <label className="col-sm-3 control-label">Name</label><div className="col-sm-7">
                             <input className="form-control" type="text" onChange={ProfileActions.updateName} value={this.state.name}/></div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Gender</label><div class="col-sm-6"><label class="radio col-sm-3"><input type="radio" name="gender" value="male" data-toggle="radio"/><span>Male</span></label>
-                            <label class="radio col-sm-3"><input type="radio" name="gender" value="female" data-toggle="radio"/><span>Female</span></label><label class="radio col-sm-3"><input type="radio" name="gender" value="other" data-toggle="radio"/><span>Other</span></label></div>
+                        <div className="form-group">
+                            <label className="col-sm-3 control-label">Gender</label><div className="col-sm-6"><label className="radio col-sm-3"><input type="radio" name="gender" value={this.state.gender} data-toggle="radio"/><span>Male</span></label>
+                            <label className="radio col-sm-3"><input type="radio" name="gender" value="female" data-toggle="radio"/><span>Female</span></label><label class="radio col-sm-3"><input type="radio" name="gender" value="other" data-toggle="radio"/><span>Other</span></label></div>
                         </div>
 
                         <div className="form-group">
-                            <label className="col-sm-3 control-label" for="location">Location</label>
-                            <div className="col-sm-7"><input className="form-control" type="text" name="location" id="location" value={}/>
+                            <label className="col-sm-3 control-label">Location</label>
+                            <div className="col-sm-7"><input className="form-control" type="text" onChange={ProfileActions.updatetLocation} value={this.state.Location}/>
                             </div>
                         </div>
 
