@@ -12,7 +12,7 @@ class NavbarStore {
         this.totalCharacters = 0;
         this.onlineUsers = 0;
         this.ajaxAnimationClass = '';
-        this.userSession = false;
+        this.userSession = '';
         this.message1 ="L";
         this.message0 = " Sing ";
 
@@ -56,6 +56,7 @@ class NavbarStore {
     onClickEventSuccess(data){
 
         // data.message return true if user logged in else false.
+
         if(data.message){
             switch (data.ref) {
             case 0:
@@ -78,7 +79,7 @@ class NavbarStore {
                 break;
             default:
                 console.log('mas tarde');
-                break;
+                break;    
             }
         }else {
             switch (data.ref) {
@@ -117,7 +118,6 @@ class NavbarStore {
         // TODO send a message of the error~!!!!!
         console.log('onAuthenticationFail');
     } // EOF
-
 }
 
 export default alt.createStore(NavbarStore);

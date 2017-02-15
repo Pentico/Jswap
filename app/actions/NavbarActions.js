@@ -67,10 +67,10 @@ class NavbarActions {
             url:'/User/authentication'
         })
             .done((data)=>{
-                this.actions.authenticationSuccess(data.message)
+                this.actions.authenticationSuccess(data)
             })
             .fail((data) => {
-                this.actions.authenticationFail(data.message);
+                this.actions.authenticationFail(data);
             })
 
     } // EOF 
