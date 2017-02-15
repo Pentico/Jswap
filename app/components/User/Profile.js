@@ -24,6 +24,18 @@ class Profile extends React.Component {
         this.setState(state);
     } // EOF
 
+    handleSubmitAccountDelete(event) {
+
+    } // EOF
+
+    handleSubmitChangePassword(event) {
+
+    } // EOF
+
+    handleSubmitProfileInfo(event) {
+
+    } // EOF
+
     render() {
         return (
             <div className='positionMain'>
@@ -91,9 +103,8 @@ class Profile extends React.Component {
                             </div>
                         </form>
                     <div class="page-header"><h3>Linked Accounts</h3></div>
+                    
                 </div>
-                <h1> User Account Settig </h1>
-
             </div>
         );
     } // EOF

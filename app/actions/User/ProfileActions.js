@@ -8,7 +8,12 @@ import {assign} from 'underscore';
 class ProfileActions {
     constructor() {
         this.generateActions(
-
+            'updateEmail',
+            'updateName',
+            'updateGender',
+            'updateLocation',
+            'updatePassword',
+            'updatePassword0'
         );
     } // EOF
 }
