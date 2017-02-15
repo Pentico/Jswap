@@ -48,7 +48,12 @@ class AddItemStore {
     } // EOF
 
     onAuthenticationSuccess(data) {
-        console.log('onAuthenticationSuccess');
+        if(data.message) {
+            // The person is authentticated.
+            
+        }else {
+            // Not Authenticated.
+        }
     } // EOF
 
     onAuthenticationFail(data) {

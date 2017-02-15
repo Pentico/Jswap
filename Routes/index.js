@@ -176,7 +176,6 @@ router.post('/getCategory', function(req, res, next){
  * */
 
 router.post('/router', function(req, res, next){
-
     if(req.user){
         res.send({
             message:true

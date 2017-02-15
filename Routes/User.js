@@ -87,7 +87,6 @@ router.post('/signUp', function(req, res, next) {
  * authenticate  
  */
   router.post('/authentication', function(req,res,next){
-
       if (req.user){
             res.send({
                 message:true

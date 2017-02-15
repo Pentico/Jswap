@@ -35,10 +35,10 @@ class AddItemActions{
                 }
         })
             .done((data)=>{
-                this.actions.addItemSuccess(data.message) 
+                this.actions.addItemSuccess(data) 
             })
             .fail((data) => {
-                this.actions.addItemFail(data.message);
+                this.actions.addItemFail(data);
             })
 
     } // EOF
@@ -50,10 +50,10 @@ class AddItemActions{
             url:'/User/authentication'
         })
             .done((data)=>{
-                this.actions.authenticationSuccess(data.message)
+                this.actions.authenticationSuccess(data)
             })
             .fail((data) => {
-                this.actions.authenticationFail(data.message);
+                this.actions.authenticationFail(data);
             })
 
     } // EOF 

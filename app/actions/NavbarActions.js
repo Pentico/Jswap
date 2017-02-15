@@ -47,7 +47,6 @@ class NavbarActions {
             url:'/index/router'
         })
             .done((data)=>{
-                
                 this.actions.clickEventSuccess({
                     message:data.message,
                     ref : payload.ref
