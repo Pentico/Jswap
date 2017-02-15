@@ -31,8 +31,7 @@ class LoginStore  {
     onLoginSuccess(data){
 
         if(data.message) {
-            console.log(data.message);
-            console.log(data.userDetails);
+            window.location = '/User'
         }else {
             console.log(data.message);
         }

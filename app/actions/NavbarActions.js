@@ -24,18 +24,15 @@ class NavbarActions {
     }
 
     logoutAttempt(){
-
-  	$.ajax({
+  	    $.ajax({
             type:'GET',
             url:'/User/logout'
         })
             .done((data)=>{
-                this.actions.logoutSuccess(data.message)
-                console.log("Hello success");
+                this.actions.logoutSuccess(data)
             })
             .fail((data) => {
-                this.actions.logoutFail(data.message);
-                console.log('Hello failure');
+                this.actions.logoutFail(data);
             })
 
   } // EOF

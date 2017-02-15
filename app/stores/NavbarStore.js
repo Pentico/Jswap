@@ -34,7 +34,13 @@ class NavbarStore {
     } // EOF
 
     onLogoutSuccess(data){
-    	console.log('onLogoutSuccess');
+    	console.log(data.message);
+        if(data.message){
+            // Logout successfully
+            window.location = '/'
+        }else {
+            // Failed to Logout of Account!!
+        }
     } // EOF
 
 
@@ -114,7 +120,7 @@ class NavbarStore {
     } // EOF
 
     onAuthenticationFail(data) {
-        this.userSession = false;
+        this.userSession = data.message;
         // TODO send a message of the error~!!!!!
         console.log('onAuthenticationFail');
     } // EOF

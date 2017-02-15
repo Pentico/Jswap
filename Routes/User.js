@@ -25,7 +25,18 @@ router.get('/', function (req, res, next) {
 
 router.get('/logout',function (req, res, next) {
     req.logout();  // passport
-    res.redirect('/');
+    
+
+    // Checking if logout was successful.
+    if(req.user){
+        res.send({
+            message:false
+        });
+    }else {
+        res.send({
+            message:true
+        });
+    }
 }); // EOF
 
 // TODO removing a User

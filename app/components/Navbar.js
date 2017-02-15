@@ -99,7 +99,7 @@ class Navbar extends React.Component {
                                 <li><a onClick={this.handleClickEvent.bind(this,5)}>About</a></li>      
                             </ul>
                             {isLoggedIn ? (
-                                <Logout/>
+                                <Logout handleLogout= {this.handleLogout}/>
                             ) : (
 
                             <ul className='nav navbar-nav navbar-right'>
