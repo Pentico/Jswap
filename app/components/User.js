@@ -1,4 +1,4 @@
-'use strict';
+
 /**
  * Created by Tuane on 2016/11/10.
  */
@@ -26,14 +26,12 @@ class User extends React.Component {
     onChange(state) {
         this.setState(state);
     }
+
     render() {
         return (
-            <div>
                 <h1>The User Profile Page </h1>
-            </div>
         );
     } // EOF
-
 }
 
 export default User;

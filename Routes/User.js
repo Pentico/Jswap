@@ -19,7 +19,9 @@ var dbJswap = models.jswap;
 var dbUser = models.jUser;
 
 router.get('/', function (req, res, next) {
-    res.send("In the user page");
+    res.send({
+        message:"user"
+    });
     console.log('Hello User');
 }); // EOF
 
