@@ -9,7 +9,7 @@ import UserStore from '../stores/UserStore';
 import UserActions from '../actions/UserActions';
 
 class User extends React.Component {
-    
+
     constructor(props) {
         super(props);
         this.state = UserStore.getState();
@@ -30,7 +30,10 @@ class User extends React.Component {
 
     render() {
         return (
-                <h1>The User Profile Page </h1>
+            <div className='positionMain'>
+                <h1 >The User Profile Page </h1>
+            </div>
+                
         );
     } // EOF
 }
