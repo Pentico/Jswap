@@ -39,7 +39,7 @@ class User extends React.Component {
                         <UserLeftBar/>
                     </div>
                     <div className="col-sm-8">
-                        <h1> The Main Component</h1>
+                        <UserRightBar/>
                     </div>
                 </div>
                </div> 

@@ -30,7 +30,21 @@ class UserRightBar extends React.Component {
     render() {
         return (
             <div>
-                <h1> Right User Sidebar </h1>
+               <ul className='nav nav-tabs nav-justified'>
+                    <li ><a data-toggle='tab' href="#">Selling</a></li>
+                    <li className='active'><a a data-toggle="tab" href="#">Bought</a></li>
+
+                        <div>
+                            <div classID='selling' className='tab-pane fade in active'>
+                                <h3>Selling</h3>
+                                <p>Some content.</p>
+                            </div>
+                            <div classID='bought' className='tab-pane fade'>
+                                <h3>Bought</h3>
+                                <p>Some content.</p>
+                            </div>
+                        </div>
+               </ul>
             </div>
                 
         );

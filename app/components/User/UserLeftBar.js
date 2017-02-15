@@ -29,9 +29,16 @@ class UserLeftBar extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1> Left User SideBar </h1>
-            </div>
+            <div class="bg-1">
+  <div class="container text-center">
+    <h3>Profile</h3>
+    <img src="bird.jpg" class="img-circle" alt="Bird" width="150" height="150"/>
+    <h3>Name : Nikia Sonja</h3>
+    <h3>Email : NikiaSonja@gmail.com</h3>
+    <h3>Account Type : Admin</h3>
+    <h3>University :Libraraie</h3>
+  </div>
+</div>
                 
         );
     } // EOF
