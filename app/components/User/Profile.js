@@ -2,8 +2,8 @@
 
 import React from 'react';
 import {Link} from 'react-router';
-import ProfileStore from '../stores/User/ProfileStore';
-import ProfileActions from '../actions/User/ProfileActions';
+import ProfileStore from '../../stores/User/ProfileStore';
+import ProfileActions from '../../actions/User/ProfileActions';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -43,7 +43,7 @@ class Profile extends React.Component {
                     <div className='page-header'>
                         <h3>Profile Information</h3>
                     </div>
-                    <form ref='pInformation' onSubmit={this.handleSubmitProfileInfo.bind()}>
+                    <form ref='pInformation' onSubmit={this.handleSubmitProfileInfo.bind(this)} className='form-horizontal'>
                         <div className='form-group'>
                              <label className="col-sm-3 control-label">Email</label>
                             <div className="col-sm-7"><input className="form-control" 
@@ -66,7 +66,7 @@ class Profile extends React.Component {
 
                         <div className="form-group">
                             <label className="col-sm-3 control-label">Gravatar</label><div className="col-sm-4">
-                            <img className="profile" src="https://gravatar.com/avatar/bc1c025568bbae701c76a5d69e7d6a98?s=200&amp;d=retro" width="100" height="100"/></div>
+                            <img className="profile"  width="100" height="100"/></div>
                         </div>
 
                         <div className="form-group">
@@ -79,22 +79,26 @@ class Profile extends React.Component {
                         <h3>Change Password</h3>
                     </div>
 
-                    <form className="form-horizontal" ref='' onSubmit={this.handleSubmitChangePassword.bind(this)}>
+                    <form className="form-horizontal" ref='ChangePassword' onSubmit={this.handleSubmitChangePassword.bind(this)}>
                         <div className="form-group">
-                            <label className="col-sm-3 control-label" >New Password</label><div className="col-sm-7">
-                            <input class="form-control" type="password" value={this.state.password} onChange={ProfileActions.updatePassword}/></div>
+                            <label className="col-sm-3 control-label" >New Password</label>
+                            <div className="col-sm-7">
+                                <input className="form-control" type="password" value={this.state.password} onChange={ProfileActions.updatePassword}/>
+                            </div>
                         </div>
                         <div className="form-group">
                             <label className="col-sm-3 control-label" >Confirm Password</label>
-                            <div className="col-sm-7"><input className="form-control" type="password" 
-                                value={this.state.password0} onChange={ProfileActions.updatePassword0}/></div></div>
+                            <div className="col-sm-7">
+                                <input className="form-control" type="password" 
+                                value={this.state.password0} onChange={ProfileActions.updatePassword0}/></div>
+                            </div>
                             <div className="form-group"><div className="col-sm-offset-3 col-sm-4"><button className="btn btn-primary" type="submit">
                             <i className="fa fa-lock"></i>Change Password</button></div>
                         </div>
                         
                     </form>
                     <div className="page-header"><h3>Delete Account</h3></div>
-                        <form className="form-horizontal" ref='AccountDelete' onSubmit={this.handleSubmitAccountDelete}>
+                        <form className="form-horizontal" ref='AccountDelete' onSubmit={this.handleSubmitAccountDelete.bind(this)}>
                             <div className="form-group">
                                 <p className="col-sm-offset-3 col-sm-4">You can delete your account, but keep in mind this action is irreversible.</p>
                                 <div className="col-sm-offset-3 col-sm-4">
@@ -102,10 +106,13 @@ class Profile extends React.Component {
                                 </div>
                             </div>
                         </form>
-                    <div class="page-header"><h3>Linked Accounts</h3></div>
-                    
+                    <div class="page-header">
+                        <h3>Linked Accounts</h3>
+                    </div>
                 </div>
             </div>
         );
     } // EOF
 }
+
+export default Profile;

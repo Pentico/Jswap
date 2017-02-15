@@ -45,9 +45,10 @@ class User extends React.Component {
             //     </div>
             //    </div> 
             // </div>
-
-            <Profile/>
-                
+            <div>
+                <Profile/>
+            </div>
+        
         );
     } // EOF
 }
