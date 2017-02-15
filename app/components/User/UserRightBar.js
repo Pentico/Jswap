@@ -7,6 +7,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import UserRightBarStore from '../../stores/User/UserRightBarStore';
 import UserRightBarActions from '../../actions/User/UserRightBarActions';
+import UserItem from './UserItem';
 
 class UserRightBar extends React.Component {
     constructor(props) {
@@ -37,7 +38,7 @@ class UserRightBar extends React.Component {
                         <div>
                             <div classID='selling' className='tab-pane fade in active'>
                                 <h3>Selling</h3>
-                                <p>Some content.</p>
+                                <UserItem/>
                             </div>
                             <div classID='bought' className='tab-pane fade'>
                                 <h3>Bought</h3>
