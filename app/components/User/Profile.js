@@ -61,8 +61,36 @@ class Profile extends React.Component {
                             <div className="col-sm-offset-3 col-sm-4"><button className="btn btn btn-primary" type="submit">
                             <i className="fa fa-pencil"></i>Update Profile</button></div>
                         </div>
-                       
                     </form>
+
+                    <div className="page-header">
+                        <h3>Change Password</h3>
+                    </div>
+
+                    <form className="form-horizontal" ref='' onSubmit={this.handleSubmitChangePassword.bind(this)}>
+                        <div className="form-group">
+                            <label className="col-sm-3 control-label" >New Password</label><div className="col-sm-7">
+                            <input class="form-control" type="password" value={this.state.password} onChange={ProfileActions.updatePassword}/></div>
+                        </div>
+                        <div className="form-group">
+                            <label className="col-sm-3 control-label" >Confirm Password</label>
+                            <div className="col-sm-7"><input className="form-control" type="password" 
+                                value={this.state.password0} onChange={ProfileActions.updatePassword0}/></div></div>
+                            <div className="form-group"><div className="col-sm-offset-3 col-sm-4"><button className="btn btn-primary" type="submit">
+                            <i className="fa fa-lock"></i>Change Password</button></div>
+                        </div>
+                        
+                    </form>
+                    <div className="page-header"><h3>Delete Account</h3></div>
+                        <form className="form-horizontal" ref='AccountDelete' onSubmit={this.handleSubmitAccountDelete}>
+                            <div className="form-group">
+                                <p className="col-sm-offset-3 col-sm-4">You can delete your account, but keep in mind this action is irreversible.</p>
+                                <div className="col-sm-offset-3 col-sm-4">
+                                    <button className="btn btn-danger" type="submit"><i className="fa fa-trash"></i>Delete my account</button>
+                                </div>
+                            </div>
+                        </form>
+                    <div class="page-header"><h3>Linked Accounts</h3></div>
                 </div>
                 <h1> User Account Settig </h1>
 
