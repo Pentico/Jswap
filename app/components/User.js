@@ -8,6 +8,7 @@ import {Link} from 'react-router';
 import UserStore from '../stores/UserStore';
 import UserActions from '../actions/UserActions';
 import UserLeftBar from './User/UserLeftBar';
+import UserRightBar from './User/UserRightBar';
 
 class User extends React.Component {
 
