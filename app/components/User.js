@@ -9,6 +9,7 @@ import UserStore from '../stores/UserStore';
 import UserActions from '../actions/UserActions';
 
 class User extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = UserStore.getState();

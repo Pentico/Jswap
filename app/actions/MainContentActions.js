@@ -25,9 +25,6 @@ class MainContentActions {
             .fail((data) => {
                 this.actions.fetchItemsFail(data);
             });
-
-
-            
     }
 
 }

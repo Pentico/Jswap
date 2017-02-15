@@ -27,7 +27,6 @@ class Login extends React.Component {
     } //EOF
 
     handleSubmitLogin(event) {
-
         event.preventDefault();
 
         let userEmail = this.state.email.trim();
@@ -42,7 +41,6 @@ class Login extends React.Component {
 
 
     render() {
-
         return (
 
             <form ref='loginForm'  className="loginForm" onSubmit={this.handleSubmitLogin.bind(this)}>

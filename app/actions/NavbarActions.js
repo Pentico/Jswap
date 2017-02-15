@@ -26,7 +26,7 @@ class NavbarActions {
     logoutAttempt(){
   	    $.ajax({
             type:'GET',
-            url:'/User/logout'
+            url:'/UserServer/logout'
         })
             .done((data)=>{
                 this.actions.logoutSuccess(data)
@@ -61,7 +61,7 @@ class NavbarActions {
 
         $.ajax({
             type:'POST',
-            url:'/User/authentication'
+            url:'/UserServer/authentication'
         })
             .done((data)=>{
                 this.actions.authenticationSuccess(data)

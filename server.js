@@ -53,7 +53,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 require('./controllers/uploadData/uploadImage')(app);
 
-app.use('/User', userRoutes);
+app.use('/UserServer', userRoutes);
 app.use('/index', mainRoutes);
 app.use('/Items', itemsRoutes);
 app.use('/UploadPicture', uploadImage);

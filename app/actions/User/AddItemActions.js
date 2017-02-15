@@ -47,7 +47,7 @@ class AddItemActions{
 
          $.ajax({
             type:'POST',
-            url:'/User/authentication'
+            url:'/UserServer/authentication'
         })
             .done((data)=>{
                 this.actions.authenticationSuccess(data)

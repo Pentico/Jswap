@@ -20,7 +20,7 @@ class LoginActions {
     loginAttempt(payload){
         $.ajax({
             type:'POST',
-            url:'/User/login',
+            url:'/UserServer/login',
             data:{
                 email:payload.email,
                 password:payload.password

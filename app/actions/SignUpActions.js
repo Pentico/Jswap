@@ -23,7 +23,7 @@ class SignUpActions {
 
         $.ajax({
             type:'POST',
-            url:'/User/signUp',
+            url:'/UserServer/signUp',
             data:{
                 email:payload.email,
                 password:payload.password1,
