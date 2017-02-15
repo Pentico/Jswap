@@ -7,6 +7,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import UserStore from '../stores/UserStore';
 import UserActions from '../actions/UserActions';
+import UserLeftBar from './User/UserLeftBar';
 
 class User extends React.Component {
 
@@ -31,7 +32,16 @@ class User extends React.Component {
     render() {
         return (
             <div className='positionMain'>
-                <h1 >The User Profile Page </h1>
+               <div className="alert alert-info">
+                <div className="row">
+                    <div className="col-sm-4">
+                        <UserLeftBar/>
+                    </div>
+                    <div className="col-sm-8">
+                        <h1> The Main Component</h1>
+                    </div>
+                </div>
+               </div> 
             </div>
                 
         );

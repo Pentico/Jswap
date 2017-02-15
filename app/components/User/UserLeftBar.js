@@ -5,8 +5,8 @@
 
 import React from 'react';
 import {Link} from 'react-router';
-import UserLeftBarStore from '../stores/User/UserLeftBarStore';
-import UserLeftBarActions from '../actions/User/UserLeftBarActions';
+import UserLeftBarStore from '../../stores/User/UserLeftBarStore';
+import UserLeftBarActions from '../../actions/User/UserLeftBarActions';
 
 class UserLeftBar extends React.Component {
     constructor(props) {
@@ -30,7 +30,7 @@ class UserLeftBar extends React.Component {
     render() {
         return (
             <div>
-                <h1  >Left User SideBar </h1>
+                <h1> Left User SideBar </h1>
             </div>
                 
         );

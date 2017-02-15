@@ -38,7 +38,7 @@ class Home extends React.Component {
 
         return (
 
-            <div>
+            <div className='positionMain'>
             <Search/>
              <div className="alert alert-info">
                 <div className="row">
