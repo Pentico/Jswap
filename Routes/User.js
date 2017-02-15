@@ -41,8 +41,12 @@ router.delete('/delete', function (req, res) {
         }); }
         req.logIn(user, function(err) {
         if (err) { return next(err); }
+        console.log('UserData');
+        console.log(user);
+        console.log('End User data');
         return res.send({
-            message:true
+            message:true,
+            userDetails: req.user  // TODO sending sensitive infomation to browser need filter data!!
         });
         });
     })(req, res, next);
@@ -61,7 +65,8 @@ router.post('/signUp', function(req, res, next) {
         req.logIn(user, function(err) {
         if (err) { return next(err); }
         return res.send({
-            message:true
+            message:true,
+            User : user
         });
         });
     })(req, res, next);

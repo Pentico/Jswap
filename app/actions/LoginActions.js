@@ -27,10 +27,10 @@ class LoginActions {
                 }
         })
             .done((data)=>{
-                this.actions.loginSuccess(data.message) 
+                this.actions.loginSuccess(data) 
             })
             .fail((data) => {
-                this.actions.loginFail(data.message);
+                this.actions.loginFail(data);
             })
         } // EOF
 }

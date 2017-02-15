@@ -29,8 +29,14 @@ class LoginStore  {
     } //EOF
 
     onLoginSuccess(data){
-        console.log(data);
-        console.log(data.username);
+
+        if(data.message) {
+            console.log(data.message);
+            console.log(data.userDetails);
+        }else {
+            console.log(data.message);
+        }
+        
     } // EOF
 
 }
