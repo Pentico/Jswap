@@ -32,7 +32,7 @@ class UserItem extends React.Component {
             <div className='well well-lg'>
               <h4> The Art Of War </h4>
               <h5> Price : 12$ </h5>
-              <h5> Date Created : 12$ </h5>
+              <h5> Date Created : 2017/02/15 </h5>
               <h5> Edit </h5>
             </div>    
         );
