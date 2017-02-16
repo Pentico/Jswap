@@ -1,4 +1,4 @@
-
+'use strict'
 /**
  * Created by Tuane on 2017/02/15.
  */
@@ -30,9 +30,9 @@ class UserItem extends React.Component {
     render() {
         return (  // Create a DropDown here show only importante informacion.
             <div className='well well-lg'>
-              <h4> The Art Of War </h4>
-              <h5> Price : 12$ </h5>
-              <h5> Date Created : 2017/02/15 </h5>
+              <h4> {this.state.name} </h4>
+              <h5> Price : {this.state.price}</h5>
+              <h5> Date Created : {this.state.date} </h5>
               <h5> Edit </h5>
             </div>    
         );

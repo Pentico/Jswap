@@ -1,4 +1,4 @@
-
+'use strict'
 /**
  * Created by Tuane on 2017/02/15
  */
