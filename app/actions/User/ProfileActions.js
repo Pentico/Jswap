@@ -15,7 +15,9 @@ class ProfileActions {
             'updatePassword',
             'updatePassword0',
             'changePsdSuccess',
-            'changePsdFail'
+            'changePsdFail',
+            'changeInfoSuccess',
+            'changeInfoFail'
         );
     } // EOF
 
@@ -54,6 +56,25 @@ class ProfileActions {
             })
             .fail((data) => {
                 this.actions.changePsdFail(data.message);
+            });
+    } // EOF
+
+    changeInfoAttempt(payload){
+
+        $.ajax({
+            type:'POST',
+            url:'/UserServer/ChangeInfo',
+            data:{
+                name:payload.name,
+                email:payload.email,
+                location:payload.location
+            }
+        })
+            .done((data)=>{
+                this.actions.changeInfoSuccess(data)
+            })
+            .fail((data) => {
+                this.actions.changeInfoFail(data);
             });
     } // EOF
 }

@@ -44,7 +44,18 @@ class Profile extends React.Component {
     } // EOF
 
     handleSubmitProfileInfo(event) {
+         event.preventDefault();
 
+         let name = this.state.updateName;
+         let email = this.state.updateEmail;
+         let location = this.state.updatetLocation;
+
+         // verify info here TODO
+         ProfileActions.changeInfoAttempt({
+             name:name,
+             email:email,
+             location:location
+         });
     } // EOF
 
     render() {
