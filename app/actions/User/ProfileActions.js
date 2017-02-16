@@ -17,7 +17,9 @@ class ProfileActions {
             'changePsdSuccess',
             'changePsdFail',
             'changeInfoSuccess',
-            'changeInfoFail'
+            'changeInfoFail',
+            'deleteAccountFail',
+            'deleteAccountSuccess'
         );
     } // EOF
 
@@ -75,6 +77,21 @@ class ProfileActions {
             })
             .fail((data) => {
                 this.actions.changeInfoFail(data);
+            });
+    } // EOF
+
+
+    deleteAccountAttempt(payload){
+
+        $.ajax({
+            type:'POST',
+            url:'/UserServer/DeleteAccount'
+        })
+            .done((data)=>{
+                this.actions.deleteAccountSuccess(data)
+            })
+            .fail((data) => {
+                this.actions.deleteAccountFail(data);
             });
     } // EOF
 }

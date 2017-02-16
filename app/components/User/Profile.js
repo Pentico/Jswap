@@ -25,6 +25,11 @@ class Profile extends React.Component {
     } // EOF
 
     handleSubmitAccountDelete(event) {
+        event.preventDefault();
+
+        // Give a warning before you did the account(confirmation)...
+
+        ProfileActions.deleteAccountAttempt();
 
     } // EOF
 
