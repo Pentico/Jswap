@@ -29,6 +29,17 @@ class Profile extends React.Component {
     } // EOF
 
     handleSubmitChangePassword(event) {
+        event.preventDefault();
+
+        let userPassword = this.state.password.trim();
+        let userPassword0 = this.state.password0.trim();
+
+        // verify here first TODO 
+
+        ProfileActions.changePsdAttempt({
+            password:userPassword,
+            password0:userPassword0
+        });
 
     } // EOF
 
