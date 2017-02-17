@@ -12,6 +12,7 @@ class UserItemStore {
         this.name='';
         this.price='';
         this.date= '';
+        
     } // EOF
 }
 
