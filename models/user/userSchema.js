@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
         password     : String,
         passwordResetToken: String,
         passwordResetExpires: Date,
-        name         : String,
+
         Items        : [
                  {
                     name         : String,
@@ -25,6 +25,8 @@ const userSchema = new mongoose.Schema({
                     category     : String
                 }
             ],
+
+
         profile: {
             name: String,
             gender: String,

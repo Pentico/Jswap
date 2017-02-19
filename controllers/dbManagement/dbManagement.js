@@ -11,7 +11,6 @@ var dbJswap = models.jswap;
 
 
 class dbManagement {
-
     constructor(){
         var dataObject='';
     }

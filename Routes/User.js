@@ -125,6 +125,138 @@ router.post('/signUp', function(req, res, next) {
         }
   }) // EOF
   
-        
+// Update profile information.
+  router.post('/updateDetails', function(req, res, next){
+
+      dbUser.findById(req.user.id, (err, user)=>{
+          if(err) {
+              return next(err);
+          }
+          user.local.email = res.body.email || '';
+          user.profile.name = req.body.name || '';
+          user.profile.gender = req.body.gender || '';
+          user.profile.location = req.body.location || '';
+          user.save((err) => {
+              if(err) {
+                    if(err.code === 11000) {
+                        req.flash('errors', { msg: 'The email address you have entered is already associated with an account.' });
+                        return res.redirect('/login'); // logout the current user
+                    }
+                     return next(err);
+              }
+             
+             req.flash('success', { msg: 'Profile information has been updated.' });
+             req.redirect('/user'); // send to user 
+          });
+
+      })
+  });  // EOF
+
+  router.post('updatePassword', function(req, res, next){
+
+      dbUser.findById(req.user.id, (err, user) => {
+          if(err){
+              return next(err);
+          }
+          user.local.password = req.body.password;
+          user.save((err) => {
+              if(err) {
+                  return next(err);
+              }
+               req.flash('success', { msg: 'Password has been changed.' });
+               res.redirect('/account');   // redirect 
+          });
+      });
+  }); // EOF
+
+/**
+ * Delete user Account
+ */
+  router.post('deleteAccount', function(req, res, next) {
+        dbUser.remove({_id: req.user.id}, (err) => {
+            if(err) {
+                return next(err);
+            }
+            req.logout();
+            req.flash('info', { msg: 'Your account has been deleted.' });
+            res.redirect('/');  // Delelted an Account....
+        });
+  });
+    
+router.get('reset password page', function(req, res, next){
+
+    dbUser.findOne({ passwordResetToken: req.params.token})
+          .where('passwordResetExpires').gt(Date.now())
+          .exec((err, user) => {
+            
+            if(err) {
+                return next(err);
+            }
+            if(!user) {
+                req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+                return res.redirect('/forgot');  // send to forgot email page
+            }
+
+            res.render('account/reset', {
+                title: 'Password Reset'
+            });
+          });
+});
+
+router.post('processPasswordReset', function(req, res, next) {
+
+    async.waterfall([
+        function resetPassword(done) {
+            dbUser
+                .findOne({ passwordResetToken: req.params.token })
+                .where('passwordResetExpires').gt(Date.now())
+                .exec((err, user) => {
+                    if(err) {
+                        return  next(err);
+                    }
+                    if(!user) {
+                         req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+                         return res.redirect('back');   // go back
+                    }
+                    user.password = req.body.password;
+                    user.passwordResetToken = undefined;
+                    user.passwordResetExpires = undefined;
+                    user.save((err) => {
+                        if (err) { return next(err); }
+                        req.logIn(user, (err) => {
+                        done(err, user);
+                        });
+                    });
+                });
+        },
+        function sendResetPasswordEmail(user, done) {
+            const transporter = nodemailer.createTransport({
+                service: 'SendGrid',
+                auth: {
+                user: process.env.SENDGRID_USER,
+                pass: process.env.SENDGRID_PASSWORD
+                }
+            });
+            const mailOptions = {
+        to: user.email,
+        from: 'info@jswap.com',
+        subject: 'Your jswap password has been changed',
+        text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`
+      };
+       transporter.sendMail(mailOptions, (err) => {
+        req.flash('success', { msg: 'Success! Your password has been changed.' });
+        done(err);
+      });
+        }
+    ],(err) =>{
+        if (err) { return next(err); }
+        res.redirect('/');  // redirect
+    });
+});
+
+router.post('forgotPassword', function(req, res, next) {
+
+
+});
 
 module.exports = router;
