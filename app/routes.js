@@ -9,6 +9,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import User from './components/User';
 import AddItem from './components/User/AddItem';
+import Profile from './components/User/Profile';
 
 export default (
     <Route component={App}>
@@ -17,5 +18,6 @@ export default (
         <Route path='/SignUp' component={SignUp}/>
         <Route path='/User' component={User} />
         <Route path='/AddItem' component={AddItem}/>
+        <Route path='/Profile' component={Profile}/>
     </Route>
 );

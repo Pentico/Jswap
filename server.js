@@ -57,12 +57,13 @@ app.use('/UserServer', userRoutes);
 app.use('/index', mainRoutes);
 app.use('/Items', itemsRoutes);
 app.use('/UploadPicture', uploadImage);
+
 app.use(function(req, res) {
     Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
         if (err) {
             res.status(500).send(err.message)
         } else if (redirectLocation) {
-            res.status(302).redirect(redirectLocation.pathname + redirectLocation.search)
+            res.status(302).redirect(redirectLocation.pathname + redirectLocation.search);
         } else if (renderProps) {
             var html = ReactDOM.renderToString(React.createElement(Router.RoutingContext, renderProps));
             var page = swig.renderFile('views/index.html', { html: html });

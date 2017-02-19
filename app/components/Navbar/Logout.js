@@ -34,10 +34,21 @@ class Logout extends React.Component {
 
     render(){
          return (
-                    <ul className='nav navbar-nav Navbar-right'>
-                        <li><Link to='/Profile'><span className="glyphicon glyphicon-user"></span>Profile</Link></li>
-                        <li><Link to='/Register'><span className="glyphicon glyphicon-lock"></span> Privacy</Link></li>
-                        <li onClick={this.props.handleLogout}><a> <span className="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <ul className='nav navbar-nav navbar-right'>
+                        <li className='dropdown'>
+                            <a className='dropdown-toggle' href='#' data-toggle='dropdown'>
+                                <img src='#' />
+                                <span> morulaneat@gmail.com </span>
+                                <i className='caret'></i>
+                            </a>
+                            <ul className='dropdown-menu' >
+                                <li><Link to='/Profile'><span className="glyphicon glyphicon-user"></span>Profile</Link></li>
+                                <li className='divider'></li>
+                                <li><Link to='/Privacy'><span className="glyphicon glyphicon-lock"></span> Privacy</Link></li>
+                                <li className='divider'></li>
+                                <li onClick={this.props.handleLogout}><a> <span className="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            </ul>
+                        </li>
                     </ul>
     		);
     }

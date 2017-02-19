@@ -9,7 +9,6 @@ import UserStore from '../stores/UserStore';
 import UserActions from '../actions/UserActions';
 import UserLeftBar from './User/UserLeftBar';
 import UserRightBar from './User/UserRightBar';
-import Profile from './User/Profile';
 
 class User extends React.Component {
 
@@ -33,20 +32,17 @@ class User extends React.Component {
 
     render() {
         return (
-            // <div className='positionMain'>
-            //    <div className="alert alert-info">
-            //     <div className="row">
-            //         <div className="col-sm-4">
-            //             <UserLeftBar/>
-            //         </div>
-            //         <div className="col-sm-8">
-            //             <UserRightBar/>
-            //         </div>
-            //     </div>
-            //    </div> 
-            // </div>
-            <div>
-                <Profile/>
+            <div className='positionMain'>
+               <div className="alert alert-info">
+                <div className="row">
+                    <div className="col-sm-4">
+                        <UserLeftBar/>
+                    </div>
+                    <div className="col-sm-8">
+                        <UserRightBar/>
+                    </div>
+                </div>
+               </div> 
             </div>
         
         );
