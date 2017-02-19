@@ -82,13 +82,55 @@ router.post('/AddItem', function(req, res, next){
         category    :req.body.category,
         id          : 6451   // auto generate this...
     };
+
+    dbUser.findById(req.user.id, (err, user) => {
+        if(err) {
+            return next(err);
+
+             switch (data.category) {
+                    case 'Electrical_Appliance': 
+                        user.Items.Electrical_Appliance.push(data);
+                        break;
+                    case 'Books_and_Stationery':
+                        user.Items.Books_and_Stationery.push(data);
+                        break;
+                     case 'Laptops_and_Gadgets':
+                        user.Items.Laptops_and_Gadgets.push(data);
+                        break;
+                     case 'Furniture':
+                        user.Items.Furniture.push(data);
+                        break;  
+                     case 'Jobs':
+                        user.Items.Jobs.push(data);
+                        break;
+                     case 'Tutors':
+                        user.Items.Tutors.push(data);
+                        break;
+                     case 'Event':
+                        user.Items.Event.push(data);
+                        break;
+                    default:
+                        console.log("category doesnt Exists ! User router Error")
+                        break;
+                } // ENS
+
+                  user.save(function(err){
+                    if(err){
+                        throw err;
+                    }
+                    console.log('Updated Successfully');
+                });
+                
+        }
+
+    })
     
      dbJswap.findOne({'jswap.name': jswapUtils.dbAdminjswap},function(err, user){
             if(err){
                 console.log(err);
             }
             // User Already Exists ....
-            if(user){
+            if(user){    
            {
                 switch (data.category) {
                     case 'Electrical_Appliance': 
