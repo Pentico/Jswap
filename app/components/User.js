@@ -20,6 +20,7 @@ class User extends React.Component {
 
     componentDidMount() {
         UserStore.listen(this.onChange);
+        UserActions.fetchUserDetailsAttempt();
     } // EOF
 
     componentWillUnmount() {

@@ -17,7 +17,7 @@ class UserActions {
 
         $.ajax({
             type:'POST',
-            url:'/User/userDetails'
+            url:'/UserServer/userDetails'
         })
             .done((data)=>{
                 this.actions.fetchUserDetailsSuccess(data)
