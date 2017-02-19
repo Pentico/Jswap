@@ -28,11 +28,16 @@ class UserRightBar extends React.Component {
         this.setState(state);
     } // EOF
 
+    onHandleCategoryClick(event) {
+        event.preventDefault();
+        
+    } // EOF
+
     render() {
         return (
             <div>
                <ul className='nav nav-tabs nav-justified'>
-                    <li ><a data-toggle='tab' href="#">Selling</a></li>
+                    <li ><a data-toggle='tab' href="#" onClick={this.onHandleCategoryClick.bind(this)}>Selling</a></li>
                     <li className='active'><a a data-toggle="tab" href="#">Bought</a></li>
 
                         <div>

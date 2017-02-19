@@ -29,16 +29,17 @@ class UserLeftBar extends React.Component {
 
     render() {
         return (
-            <div class="bg-1">
-  <div class="container text-center">
-    <h3>Profile</h3>
-    <img src="bird.jpg" class="img-circle" alt="Bird" width="150" height="150"/>
-    <h3>Name : Nikia Sonja</h3>
-    <h3>Email : NikiaSonja@gmail.com</h3>
-    <h3>Account Type : Admin</h3>
-    <h3>University :Libraraie</h3>
-  </div>
-</div>
+            <div className="bg-1 left-nav-user ">
+                <div className="container ">
+                    <h3>Profile</h3>
+                    <img src="bird.jpg" className="img-circle" alt="user Profile img" width="150" height="150"/>
+                    <h4>Name : Nikia Sonja</h4>
+                    <h4>Email : NikiaSonja@gmail.com</h4>
+                    <h4>Account Type : Admin</h4>
+                    <h4>University :Libraraie</h4>
+                    <h4>Reputation : 10</h4>
+                </div>
+            </div>
                 
         );
     } // EOF

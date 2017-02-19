@@ -33,7 +33,7 @@ class User extends React.Component {
     render() {
         return (
             <div className='positionMain'>
-               <div className="alert alert-info">
+               <div>
                 <div className="row">
                     <div className="col-sm-4">
                         <UserLeftBar/>
