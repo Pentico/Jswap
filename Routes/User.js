@@ -5,6 +5,9 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('../controllers/authentication');
+const async = require('async');
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
 import UtilsDir from '../configUtills/UtilsDir';
 import UtilsApps from '../configUtills/UtilsApp';
 var fs = new UtilsDir();
@@ -256,7 +259,57 @@ router.post('processPasswordReset', function(req, res, next) {
 
 router.post('forgotPassword', function(req, res, next) {
 
-
+    async.waterfall([
+        function createRandomToken(done) {
+            Crypto.randomBytes(16, (err, buf) => {
+                const token = buf.toString('hex');
+                done(err, token);
+            });
+        },
+        function setRandomToken(token, done) {
+            dbUser.findOne({ email : req.body.email}, (err, user) => {
+                if(err) {
+                    return done(err);
+                }
+                if(!user) {
+                    req.flash('errors', { msg: 'Account with that email address does not exist.' });
+                    return res.redirect('/forgot');  // redirect ... 
+                }
+                 user.passwordResetToken = token;
+                user.passwordResetExpires = Date.now() + 3600000; // 1 hour
+                user.save((err) => {
+                done(err, token, user);
+                });
+            });
+        },
+        function sendForgotPasswordEmail(token, user, done) {
+            const transporter = nodemailer.createTransport({
+                service: 'SendGrid',
+                auth: {
+                user: process.env.SENDGRID_USER,
+                pass: process.env.SENDGRID_PASSWORD
+                }
+            });
+            const mailOptions = {
+                 to: user.email,
+                from: 'info@jswap.com',
+                subject: 'Reset your password on Jswap',
+                text: `You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n
+                Please click on the following link, or paste this into your browser to complete the process:\n\n
+                http://${req.headers.host}/reset/${token}\n\n
+                If you did not request this, please ignore this email and your password will remain unchanged.\n`
+            };
+            transporter.sendMail(mailOptions, (err) => {
+                req.flash('info', { msg: `An e-mail has been sent to ${user.email} with further instructions.` });
+                done(err);
+            });
+        }
+    ], (err) =>{
+        if(err) {
+            return next(err);
+        }
+        res.redirect('/forgot');  // redirect 
+    });
 });
 
 module.exports = router;
