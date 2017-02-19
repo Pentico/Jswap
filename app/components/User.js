@@ -36,7 +36,7 @@ class User extends React.Component {
                <div>
                 <div className="row">
                     <div className="col-sm-4">
-                        <UserLeftBar/>
+                        <UserLeftBar userData = {this.state.userData}/>
                     </div>
                     <div className="col-sm-8">
                         <UserRightBar/>

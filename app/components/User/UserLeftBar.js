@@ -32,12 +32,13 @@ class UserLeftBar extends React.Component {
             <div className="bg-1 left-nav-user ">
                 <div className="container ">
                     <h3>Profile</h3>
-                    <img src="bird.jpg" className="img-circle" alt="user Profile img" width="150" height="150"/>
-                    <h4>Name : Nikia Sonja</h4>
-                    <h4>Email : NikiaSonja@gmail.com</h4>
-                    <h4>Account Type : Admin</h4>
-                    <h4>University :Libraraie</h4>
-                    <h4>Reputation : 10</h4>
+                    <img src={this.props.userData.img} className="img-circle" alt="user Profile img" width="150" height="150"/>
+                    
+                    <h4>Name : {this.props.userData.name} </h4>
+                    <h4>Email : {this.props.userData.email} </h4>
+                    <h4>Account Type : {this.props.userData.account} </h4>
+                    <h4>University : {this.props.userData.university} </h4>
+                    <h4>Reputation : {this.props.userData.reputation} </h4>
                 </div>
             </div>
                 

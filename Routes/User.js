@@ -110,6 +110,21 @@ router.post('/signUp', function(req, res, next) {
             });
         }
   }) // EOF
+
+   router.post('/userDetails', function(req,res,next){
+      if (req.user){
+            res.send({
+                // send details here
+                message:true
+            });
+        } else {
+            res.send({
+                // send to login page here !!
+                message:false
+            });
+        }
+  }) // EOF
+  
         
 
 module.exports = router;
