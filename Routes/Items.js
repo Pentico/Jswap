@@ -103,94 +103,94 @@ router.post('/AddItem', function(req, res, next){
 
     });
     
-//      dbJswap.findOne({'jswap.name': jswapUtils.dbAdminjswap},function(err, user){
-//             if(err){
-//                 console.log(err);
-//             }
-//             // User Already Exists ....
-//             if(user){    
-//            {
-//                 switch (data.category) {
-//                     case 'Electrical_Appliance': 
-//                         user.jswap.Items.Electrical_Appliance.push(data);
-//                         break;
-//                     case 'Books_and_Stationery':
-//                         user.jswap.Items.Books_and_Stationery.push(data);
-//                         break;
-//                      case 'Laptops_and_Gadgets':
-//                         user.jswap.Items.Laptops_and_Gadgets.push(data);
-//                         break;
-//                      case 'Furniture':
-//                         user.jswap.Items.Furniture.push(data);
-//                         break;  
-//                      case 'Jobs':
-//                         user.jswap.Items.Jobs.push(data);
-//                         break;
-//                      case 'Tutors':
-//                         user.jswap.Items.Tutors.push(data);
-//                         break;
-//                      case 'Event':
-//                         user.jswap.Items.Event.push(data);
-//                         break;
-//                     default:
-//                         console.log("category doesnt Exists ! User router Error")
-//                         break;
-//                 }
-//              }
+     dbJswap.findOne({'jswap.name': jswapUtils.dbAdminjswap},function(err, user){
+            if(err){
+                console.log(err);
+            }
+            // User Already Exists ....
+            if(user){    
+           {
+                switch (data.category) {
+                    case 'Electrical_Appliance': 
+                        user.jswap.Items.Electrical_Appliance.push(data);
+                        break;
+                    case 'Books_and_Stationery':
+                        user.jswap.Items.Books_and_Stationery.push(data);
+                        break;
+                     case 'Laptops_and_Gadgets':
+                        user.jswap.Items.Laptops_and_Gadgets.push(data);
+                        break;
+                     case 'Furniture':
+                        user.jswap.Items.Furniture.push(data);
+                        break;  
+                     case 'Jobs':
+                        user.jswap.Items.Jobs.push(data);
+                        break;
+                     case 'Tutors':
+                        user.jswap.Items.Tutors.push(data);
+                        break;
+                     case 'Event':
+                        user.jswap.Items.Event.push(data);
+                        break;
+                    default:
+                        console.log("category doesnt Exists ! User router Error")
+                        break;
+                }
+             }
 
-//             user.save(function(err){
-//                 if(err){
-//                     throw err;
-//                 }
-//                 console.log('Updated Successfully');
-//             });
+            user.save(function(err){
+                if(err){
+                    throw err;
+                }
+                console.log('Updated Successfully');
+            });
                 
-//             }else{ // User didnt Exists
+            }else{ // User didnt Exists
                 
-//              var newUser = new dbJswap();
-//              newUser.jswap.name = jswapUtills.dbAdminjswap;
-//              {
+             var newUser = new dbJswap();
+             newUser.jswap.name = jswapUtills.dbAdminjswap;
+             {
 
-//                 switch (data.category) {
-//                     case 'Electrical_Appliance':
-//                         newUser.jswap.Items.Electrical_Appliance.push(data);
-//                         break;
-//                     case 'Books_and_Stationery':
-//                         newUser.jswap.Items.Books_and_Stationery.push(data);
-//                         break;
-//                      case 'Laptops_and_Gadgets':
-//                         newUser.jswap.Items.Laptops_and_Gadgets.push(data);
-//                         break;
-//                      case 'Furniture':
-//                         newUser.jswap.Items.Furniture.push(data);
-//                         break;
-//                      case 'Jobs':
-//                         newUser.jswap.Items.Jobs.push(data);
-//                         break;
-//                      case 'Tutors':
-//                         newUser.jswap.Items.Tutors.push(data);
-//                         break;
-//                      case 'Event':
-//                         newUser.jswap.Items.Event.push(data);
-//                         break;
-//                     default:
-//                         console.log("category doesnt Exists ! User router Error")
-//                         break;
-//                 }
-//              }
-//              newUser.save(function(err){
-//                  if(err){
-//                     throw err;
-//                  }
-//                     console.log('Successfully updated');
-//              });
-//             } 
-//     }); 
-// }else{
+                switch (data.category) {
+                    case 'Electrical_Appliance':
+                        newUser.jswap.Items.Electrical_Appliance.push(data);
+                        break;
+                    case 'Books_and_Stationery':
+                        newUser.jswap.Items.Books_and_Stationery.push(data);
+                        break;
+                     case 'Laptops_and_Gadgets':
+                        newUser.jswap.Items.Laptops_and_Gadgets.push(data);
+                        break;
+                     case 'Furniture':
+                        newUser.jswap.Items.Furniture.push(data);
+                        break;
+                     case 'Jobs':
+                        newUser.jswap.Items.Jobs.push(data);
+                        break;
+                     case 'Tutors':
+                        newUser.jswap.Items.Tutors.push(data);
+                        break;
+                     case 'Event':
+                        newUser.jswap.Items.Event.push(data);
+                        break;
+                    default:
+                        console.log("category doesnt Exists ! User router Error")
+                        break;
+                }
+             }
+             newUser.save(function(err){
+                 if(err){
+                    throw err;
+                 }
+                    console.log('Successfully updated');
+             });
+            } 
+    }); 
+}else{
     
-//     console.log('not a User');
-//     }
-     }
+    console.log('not a User');
+}
+
 }); // EOF
 
 /**

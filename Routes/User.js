@@ -89,6 +89,21 @@ router.post('/signUp', function(req, res, next) {
 }); // EOF
 
 
+/**
+ * Get Selected Items 
+ */
+router.post('getSelectedItem', function(req, res, next) {
+    
+    
+});
+
+/***
+ * Get All User Items
+ */
+router.post('getAllItems', function(req, res, next) {
+
+});
+
 
 //TODO make this send a message to front weather it was successful or not
 // router.post('/signUp', passport.authenticate('local-signup',{
