@@ -93,8 +93,10 @@ router.post('/signUp', function(req, res, next) {
  * Get Selected Items 
  */
 router.post('getSelectedItem', function(req, res, next) {
-    
-    
+
+    // dbUser.findOne(
+    //     {'local.items'}
+    // )
 });
 
 /***
