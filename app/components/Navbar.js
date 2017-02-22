@@ -60,16 +60,6 @@ class Navbar extends React.Component {
         })
     }      
 
-    LoginDiv(){
-
-        return (
-
-            <ul className='nav navbar-nav navbar-right'>
-                <li><a onClick={this.handleClickEvent.bind(this,3)}>Add Item</a></li>
-                <li><a onClick={this.handleClickEvent.bind(this,6)}>Login</a></li>
-            </ul>
-        );
-    } 
 
     render() {
 

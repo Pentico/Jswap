@@ -84,8 +84,7 @@ var io = require('socket.io')(server);
 var onlineUsers = 0;
 
 io.sockets.on('connection', function(socket) {
-    onlineUsers++;
-
+    onlineUsers++
     io.sockets.emit('onlineUsers', { onlineUsers: onlineUsers });
 
     socket.on('disconnect', function() {

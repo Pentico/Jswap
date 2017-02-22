@@ -37,6 +37,10 @@ class NavbarActions {
 
   } // EOF
 
+
+/**
+ * This routes the user depending on weather they are logged in our not!!!
+ */
     clickEvent(payload){
 
   	$.ajax({

@@ -36,6 +36,7 @@ class Logout extends React.Component {
          return (
                     <ul className='nav navbar-nav navbar-right'>
                         <li className='dropdown'>
+                            <Link to='/AddItem'>AddItem</Link>
                             <a className='dropdown-toggle' href='#' data-toggle='dropdown'>
                                 <img src='#' />
                                 <span> morulaneat@gmail.com </span>
