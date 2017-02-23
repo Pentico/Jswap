@@ -91,22 +91,20 @@ class dbManagement {
  */
     getAllCategory(data, dbName) {
 
-          console.log('Hello');
-            var item ='';
+        var item ='';
          dbName.findOne(
-            { "jswap.name" : data.name},
-            {"jswap.Items." : 1 },  function(err, item){
+            { "local.email" : data.email},
+            {"local.Items." : 1 },  function(err, item){
             if(err){
                 return (err); 
             }
             if(item){    
-                console.log(item.jswap.Items); 
-                return item.jswap.Items;              
+                console.log(item.local.Items); 
+                return item.local.Items;              
             }
             
         });
 
-        console.log('In the it ');
         console.log(item);
         return item;
     } // EOF
@@ -116,16 +114,16 @@ class dbManagement {
  */
     getCategory(data, dbName){
 
-        dbName.find(
-            { "local.Items.category" : {$eq: data.category}},
-            {local :{$elemMatch:{age: {$eq : data.category}}}},  function(err, item){
-            if(err){
-                return (err); 
-            }
-            if(item){     
-                 return item;          
-            }
-        });
+        // db.findOne(
+        //     { "local.Items._id" : data._id},
+        //     {"local.Items" : 1 },  function(err, item){
+        //     if(err){
+        //         return (err); 
+        //     }
+        //     if(item){     
+        //          return item;          
+        //     }
+        // });
     } // EOF
 
 /**
