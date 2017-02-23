@@ -65,6 +65,27 @@ class dbManagement {
         });
     } // EOF
 
+/**
+ * Update an Item 
+ */
+    updateItem(data, DbName ){
+
+        DbName.update({'local.Items._id' : data._id},
+            {'$set' : {
+                'local.Items.$.name'    : data.name,
+                'local.Items.$.price'   : data.price,
+                'local.Items.$.category': data.category,
+                'local.Items.$.info'    : data.info
+
+            }}, function (err, item) {
+                if(err){
+                    return err;
+                }
+
+                console.log(item);
+            });
+    } // EOF
+
 
 /**
  * Getting All Categories 

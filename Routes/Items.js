@@ -88,7 +88,7 @@ router.post('/AddItem', function(req, res, next){
             id          : 6451   // auto generate this...
         };
         dbManagement.addItem(data, dbUser);
-        // dbManagement.removeItem(data, dbUser); // remove an Item data represents a crieria TODO make it auto generate _id
+        //dbManagement.removeItem(data, dbUser); // remove an Item data represents a crieria TODO make it auto generate _id
         dbManagement.getItem(data, dbUser); // data represents the criteria send the auto generate _id
   
     }  else{
