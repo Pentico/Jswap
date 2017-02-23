@@ -81,7 +81,6 @@ class dbManagement {
                 if(err){
                     return err;
                 }
-
                 console.log(item);
             });
     } // EOF
@@ -94,7 +93,7 @@ class dbManagement {
 
           console.log('Hello');
             var item ='';
-         dbJswap.findOne(
+         dbName.findOne(
             { "jswap.name" : data.name},
             {"jswap.Items." : 1 },  function(err, item){
             if(err){
@@ -117,9 +116,9 @@ class dbManagement {
  */
     getCategory(data, dbName){
 
-        dbJswap.findOne(
-            { "jswap.Items.Electrical_Appliance.id" : data.id},
-            {"jswap.Items.Electrical_Appliance" : 1 },  function(err, item){
+        dbName.find(
+            { "local.Items.category" : {$eq: data.category}},
+            {local :{$elemMatch:{age: {$eq : data.category}}}},  function(err, item){
             if(err){
                 return (err); 
             }
