@@ -5,8 +5,6 @@
 'use strict';
 var jswapUtills = require('../../config');
 var models = require('../../models');
-
-
 var dbJswap = models.jswap;
 var dbUser = models.jUser;
 
@@ -35,7 +33,7 @@ class dbManagement {
             if(err) {
                 return next(err);
             }
-
+            if(user)
             user.local.Items.push(data);
             
                   user.save(function(err){
@@ -46,16 +44,15 @@ class dbManagement {
                 });   
         });
 
-
     } // EOF
 
 /** 
- * Getting the Item la systema requested
+ * Getting an Item with a criterion
  */
-    getItem(data){
+    getItem(dbName, criterion){
 
             var it ='';
-        dbJswap.findOne(
+        dbName.findOne(
             { "jswap.Items.Electrical_Appliance.id" : data.id},
             {
              "jswap.Items.Electrical_Appliance.$" : data.id },  function(err, item){

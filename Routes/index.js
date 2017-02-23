@@ -32,27 +32,27 @@ var dbUser = models.jUser;
 // Will use an Array ie. check.getItemInCategory will return an array
 router.post('/ItemInCategory', function(req, res, next){
 
-     dbJswap.findOne(
-            { "jswap.name" : jswapUtils.dbAdminjswap },
-            {"jswap.Items" : 1 },  function(err, item){
-            if(err){
-                return (err); 
-            }
-            if(item){    
-                console.log(item.jswap.Items);
-                let lists = item.jswap.Items;
-                res.send({
-                        Electrical      : lists.Electrical_Appliance.length,
-                        Stationery      : lists.Books_and_Stationery.length,
-                        Gadgets         : lists.Laptops_and_Gadgets.length,
-                        Furniture       : lists.Furniture.length,
-                        Jobs            : lists.Jobs.length,
-                        Tutors          : lists.Tutors.length,
-                        Event           : lists.Event.length
-                    });           
-            }
+    //  dbJswap.findOne(
+    //         { "jswap.name" : jswapUtils.dbAdminjswap },
+    //         {"jswap.Items" : 1 },  function(err, item){
+    //         if(err){
+    //             return (err); 
+    //         }
+    //         if(item){    
+    //             console.log(item.lo.Items);
+    //             let lists = item.jswap.Items;
+    //             res.send({
+    //                     Electrical      : lists.Electrical_Appliance.length,
+    //                     Stationery      : lists.Books_and_Stationery.length,
+    //                     Gadgets         : lists.Laptops_and_Gadgets.length,
+    //                     Furniture       : lists.Furniture.length,
+    //                     Jobs            : lists.Jobs.length,
+    //                     Tutors          : lists.Tutors.length,
+    //                     Event           : lists.Event.length
+    //                 });           
+    //         }
             
-        });
+    //     });
 
 }); // EOF
 
