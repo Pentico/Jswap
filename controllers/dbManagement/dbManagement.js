@@ -16,7 +16,11 @@ class dbManagement {
         var dataObject='';
     }
  
-    addItem(data){
+
+ /**
+  * Add an Item to DbName
+  */
+    addItem(data, dbName){
 
            var local= {
             name        :data.name,
@@ -27,37 +31,21 @@ class dbManagement {
             id          :data.id
         }
 
-         dbJswap.findOne({'jswap.name':jswapUtills.dbAdminjswap},function(err, user){
-
-            if(err){
-                console.log(err);
+        dbName.findById(data._id, (err, user) =>{
+            if(err) {
+                return next(err);
             }
 
-            // User Already Exists ....
-            if(user){
+            user.local.Items.push(data);
+            
+                  user.save(function(err){
+                    if(err){
+                        throw err;
+                    }
+                    console.log('Updated Successfully');
+                });   
+        });
 
-            user.jswap.Items.Electrical_Appliance.push(local)
-            user.save(function(err){
-                if(err){
-                    throw err;
-                }
-                console.log('update this shit, using the old db Admin');
-            });
-                
-            }else{ // User didnt Exists
-                
-            var newUser = new dbJswap();
-             newUser.jswap.name = jswapUtills.dbAdminjswap;
-             newUser.jswap.Items.Electrical_Appliance.push(local);
-             newUser.save(function(err){
-                 if(err)
-                    throw err;
-
-                    console.log('New User creating a new admin db');
-             });
-             
-            } 
-    });  
 
     } // EOF
 
@@ -83,7 +71,11 @@ class dbManagement {
         console.log(it.jswap);
     } // EOF
 
-    getAllCategory(data) {
+
+/**
+ * Getting All Categories 
+ */
+    getAllCategory(data, dbName) {
 
           console.log('Hello');
             var item ='';
@@ -105,7 +97,10 @@ class dbManagement {
         return item;
     } // EOF
 
-    getCategory(data){
+/**
+ * Get a Category from a db
+ */
+    getCategory(data, dbName){
 
         dbJswap.findOne(
             { "jswap.Items.Electrical_Appliance.id" : data.id},
@@ -119,10 +114,16 @@ class dbManagement {
         });
     } // EOF
 
+/**
+ * Add  a Category to a db
+ */
     addCategory(dat){
 
     } // EOF
 
+/**
+ * Remove all items from dbName.
+ */
     removeAllItems(data){
 
         // dbJswap.update({
@@ -141,6 +142,10 @@ class dbManagement {
         
     } // EOF
 
+
+/**
+ * Remove an Item from dbName
+ */
     removeItem(data) {
 
         dbJswap.update({

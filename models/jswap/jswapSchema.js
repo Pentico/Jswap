@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 var jswapSchema = new mongoose.Schema({ 
 
-   jswap    : {
+   local    : {
             name        : String,
             Items       : {
                             Electrical_Appliance:[],
