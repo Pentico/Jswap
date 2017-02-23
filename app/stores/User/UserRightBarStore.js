@@ -8,6 +8,8 @@ import UserRightBarActions from '../../actions/User/UserRightBarActions';
 class UserRightBarStore {
     constructor() {
         this.bindActions(UserRightBarActions);
+        this.classTab0 = "tab-pane fade in active";
+        this.classTab1= "tab-pane fade";
     }
 }
 
