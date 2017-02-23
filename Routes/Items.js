@@ -88,6 +88,8 @@ router.post('/AddItem', function(req, res, next){
             id          : 6451   // auto generate this...
         };
         dbManagement.addItem(data, dbUser);
+
+        dbManagement.getItem(data, dbUser); // data represents the criteria
   
     }  else{
         console.log('not a User');

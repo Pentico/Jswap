@@ -49,23 +49,21 @@ class dbManagement {
 /** 
  * Getting an Item with a criterion
  */
-    getItem(dbName, criterion){
+    getItem(criterion, dbName){
 
             var it ='';
         dbName.findOne(
-            { "jswap.Items.Electrical_Appliance.id" : data.id},
+            { "local.Items.id" : criterion.id},
             {
-             "jswap.Items.Electrical_Appliance.$" : data.id },  function(err, item){
+             "local.Items.$" : criterion.id },  function(err, item){
             if(err){
                 return (err); 
             }
             if(item){     
                  console.log(item);          
             }
-            it = item;
-            console.log(item.jswap);
+            console.log(item);
         });
-        console.log(it.jswap);
     } // EOF
 
 
