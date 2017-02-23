@@ -62,7 +62,6 @@ class dbManagement {
             if(item){     
                  console.log(item);          
             }
-            console.log(item);
         });
     } // EOF
 
@@ -140,12 +139,14 @@ class dbManagement {
 
 /**
  * Remove an Item from dbName
+ * 
+ * TODO make the _id 
  */
-    removeItem(data) {
+    removeItem(data, dbName) {
 
-        dbJswap.update({
-               'jswap.Items.Electrical_Appliance.id':data.id},{
-                    $pull:{'jswap.Items.Electrical_Appliance':{id:data.id}}}, 
+        dbName.update({
+               'local.Items.id':data.id},{
+                    $pull:{'local.Items':{id:data.id}}}, 
                      function(err, item){
                     if(err){
                         return err;
