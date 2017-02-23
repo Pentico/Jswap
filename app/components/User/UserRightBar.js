@@ -43,7 +43,7 @@ class UserRightBar extends React.Component {
              console.log(' in ref 0');
              this.setState.classTab0 = "tab-pane fade in active";  
              this.setState.classTab1 = "tab-pane fade";
-             this.setState.classTab_0 = "active";
+             this.setState.classTab_0 = 'active';
              this.setState.classTab_1 = "";
         }
         
