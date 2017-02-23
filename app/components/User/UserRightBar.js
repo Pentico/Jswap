@@ -28,37 +28,41 @@ class UserRightBar extends React.Component {
         this.setState(state);
     } // EOF
 
-    onHandleCategoryClick(event) {
-        event.preventDefault();
+    onHandleCategoryClick(ref, event) {
+        
+        console.log(ref);
+
+        if(ref == 1){
+            console.log('in ref 1');
+            this.setState.classTab1 = "tab-pane fade in active";
+            this.setState.classTab_1 = "active"
+            this.setState.classTab0 = "tab-pane fade";
+            this.setState.classTab_0 = "";
+
+        }else if(ref == 0) {
+             console.log(' in ref 0');
+             this.setState.classTab0 = "tab-pane fade in active";  
+             this.setState.classTab1 = "tab-pane fade";
+             this.setState.classTab_0 = "active";
+             this.setState.classTab_1 = "";
+        }
         
     } // EOF
 
-    onTabClick(ref, event) {
-        event.preventDefault();
-
-        if(ref === 0){
-            classes = "tab-pane fade in active";
-            classes2 = "tab-pane fade";
-        }else if(ref === 1) {
-             this.state.classTab0 = "tab-pane fade in active";
-             this.state.classTab1 = "tab-pane fade";
-        }
-        this.state.active = true;
-    } // EOF
 
     render() {
         
         return (
             <div>
                <ul className='nav nav-tabs nav-justified'>
-                    <li ><a data-toggle='tab' href="#" onClick={this.onHandleCategoryClick.bind(this)}>Selling</a></li>
-                    <li className='active'><a a data-toggle="tab" href="#">Bought</a></li>
+                    <li className={this.state.classTab_0} ><a data-toggle='tab' href="#" onClick={this.onHandleCategoryClick.bind(this, 0)}>Selling</a></li>
+                    <li className={this.state.classTab_1} ><a a data-toggle="tab" href="#" onClick={this.onHandleCategoryClick.bind(this, 1)}>Bought</a></li>
                         <div>
-                            <div classID='selling' className= {this.state.classTab0} onClick={this.onTabClick.bind(this, 0)}>
+                            <div classID='selling' className= {this.state.classTab0} >
                                 <h3>Selling</h3>
                                 <UserItem/>
                             </div>
-                            <div classID='bought' className= {this.state.classTab1} onClick={this.onTabClick.bind(this, 1)}>
+                            <div classID='bought' className= {this.state.classTab1} >
                                 <h3>Bought</h3>
                                 <p>Some content.</p>
                             </div>

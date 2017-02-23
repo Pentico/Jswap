@@ -9,7 +9,9 @@ class UserRightBarStore {
     constructor() {
         this.bindActions(UserRightBarActions);
         this.classTab0 = "tab-pane fade in active";
-        this.classTab1= "tab-pane fade";
+        this.classTab1  = "tab-pane fade";
+        this.classTab_0 = "active";
+        this.classTab_1 = "";
     }
 }
 
