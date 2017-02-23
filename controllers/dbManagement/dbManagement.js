@@ -8,6 +8,7 @@ var models = require('../../models');
 
 
 var dbJswap = models.jswap;
+var dbUser = models.jUser;
 
 
 class dbManagement {
@@ -21,7 +22,7 @@ class dbManagement {
             name        :data.name,
             info        :data.info,
             price       :data.price,
-            dateCreated  :data.dateCreated,
+            dateCreated :data.dateCreated,
             category    :data.category,
             id          :data.id
         }
@@ -65,7 +66,6 @@ class dbManagement {
  */
     getItem(data){
 
-       
             var it ='';
         dbJswap.findOne(
             { "jswap.Items.Electrical_Appliance.id" : data.id},

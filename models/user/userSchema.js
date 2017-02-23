@@ -22,7 +22,8 @@ const userSchema = new mongoose.Schema({
                     info         : String,
                     price        : Number,
                     dateCreated  : Date,
-                    category     : String
+                    category     : String,
+                    id           : String
                 }
             ],
 
