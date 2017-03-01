@@ -10,6 +10,8 @@ class UserStore {
         this.bindActions(UserActions);
         this.userData = {};
         this.itemsData = "";
+        this.selling = [];
+        this.buying = [];
     } // EOF
 
     onFetchUserDetailsSuccess(data) {
@@ -23,10 +25,10 @@ class UserStore {
             img        : data.img
         };
 
-        this.itemsData = {
-            selling : data.selling,
-            buying : data.buying
-        };
+
+        console.log(data.selling);
+        this.buying = data.buying;
+        this.selling = data.selling;
         
     } // EOF
 

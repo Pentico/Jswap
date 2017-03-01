@@ -40,7 +40,7 @@ class User extends React.Component {
                         <UserLeftBar userData = {this.state.userData}/>
                     </div>
                     <div className="col-sm-8">
-                        <UserRightBar itemsData = {this.state.itemsData}/>
+                        <UserRightBar selling = {this.state.selling} buying = {this.state.buying}/>
                     </div>
                 </div>
                </div> 

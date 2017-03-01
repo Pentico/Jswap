@@ -10,7 +10,8 @@ class UserItemActions {
         this.generateActions(
 
         );
-    }
+    } // EOF
+    
 }
 
 

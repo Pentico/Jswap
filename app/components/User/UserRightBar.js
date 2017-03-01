@@ -62,7 +62,7 @@ class UserRightBar extends React.Component {
                         <div>
                             <div classID='selling' className= {this.state.classTab0} >
                                 <h3>Selling</h3>
-                                <UserItem/>
+                                {this.props.selling.map((value,key) => <UserItem Id={key} value={value}/>)}
                             </div>
                             <div classID='bought' className= {this.state.classTab1} >
                                 <h3>Bought</h3>

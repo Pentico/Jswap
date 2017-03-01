@@ -22,8 +22,7 @@ const userSchema = new mongoose.Schema({
                     info         : String,
                     price        : Number,
                     dateCreated  : Date,
-                    category     : String,
-                    id           : String
+                    category     : String
                 }
             ],
         BuyItems    : [
@@ -33,7 +32,6 @@ const userSchema = new mongoose.Schema({
                     price        : Number,
                     dateCreated  : Date,
                     category     : String,
-                    id           : String
                 }
             ],
 

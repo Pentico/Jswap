@@ -89,14 +89,15 @@ router.post('/AddItem', function(req, res, next){
         // };
 
         let data = {
-            name : "test1",
-            info : 'simple',
-            price : '8546',
+            name : req.body.name,
+            info : req.body.info,
+            price : req.body.price,
             dateCreated : Date.now(),
-            
+            category : req.body.category,
+            _id : req.user._id
         }
-        dbManagement.getCategory(data,dbUser);
-        //dbManagement.addItem(data, dbUser);
+        // dbManagement.getCategory(data,dbUser);
+        dbManagement.addItem(data, dbUser);
         //dbManagement.removeItem(data, dbUser); // remove an Item data represents a crieria TODO make it auto generate _id
         //dbManagement.getItem(data, dbUser); // data represents the criteria send the auto generate _id
   

@@ -133,15 +133,16 @@ router.post('getAllItems', function(req, res, next) {
 
    router.post('/userDetails', function(req,res,next){
       if (req.user){
+          console.log(req.user.local.Items);
 
             res.send({
                 email : req.user.local.email,
                 selling : req.user.local.Items,
                 buying  : req.user.local.BuyItems,
-                reputation : req.user.profile.reputation,
-                university : req.user.profile.university,
-                gender  : req.user.profile.gender,
-                name    : req.user.profile.name,
+                // reputation : req.user.profile.reputation,
+                // university : req.user.profile.university,
+                // gender  : req.user.profile.gender,
+                // name    : req.user.profile.name,
             });
         } else {
             res.send({
