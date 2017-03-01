@@ -36,7 +36,6 @@ class UserLeftBar extends React.Component {
                     
                     <h4>Name : {this.props.userData.name} </h4>
                     <h4>Email : {this.props.userData.email} </h4>
-                    <h4>Account Type : {this.props.userData.account} </h4>
                     <h4>University : {this.props.userData.university} </h4>
                     <h4>Reputation : {this.props.userData.reputation} </h4>
                 </div>

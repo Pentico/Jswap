@@ -133,9 +133,12 @@ router.post('getAllItems', function(req, res, next) {
 
    router.post('/userDetails', function(req,res,next){
       if (req.user){
+          console.log(req.user.local.email);
             res.send({
-                // send details here
-                message:true
+                email : req.user.local.email,
+                Items : req.user.local.Items,
+                reputation : req.user.local.reputation,
+                university : req.user.local.university
             });
         } else {
             res.send({

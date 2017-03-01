@@ -13,6 +13,8 @@ const userSchema = new mongoose.Schema({
     local            : {
         email        : { type: String, unique: true },
         password     : String,
+        reputation   : String,
+        university   : String,
         passwordResetToken: String,
         passwordResetExpires: Date,
 
