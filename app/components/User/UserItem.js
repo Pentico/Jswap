@@ -32,10 +32,10 @@ class UserItem extends React.Component {
         console.log(this.props.value);
         return (  // Create a DropDown here show only importante informacion.
             <div className='well well-lg'>
-              <h4> {this.props.value.name} </h4>
-              <h5> Price : {this.props.value.price}</h5>
-              <h5> Price : {this.props.value.category}</h5>
-              <h5> Date Created : {this.props.value.dateCreated} </h5>
+              <h4> Name     : {this.props.value.name} </h4>
+              <h5> Price    : {this.props.value.price}</h5>
+              <h5> Category : {this.props.value.category}</h5>
+              <h5> Date     : {this.props.value.dateCreated} </h5>
               <h5> Edit </h5>
             </div>    
         );
