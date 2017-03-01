@@ -9,20 +9,22 @@ class UserStore {
     constructor() {
         this.bindActions(UserActions);
         this.userData = {};
+        this.itemsData = "";
     } // EOF
 
     onFetchUserDetailsSuccess(data) {
 
 
-        console.log(data);
-        console.log(data.email);
         this.userData = {
-            // name       : data.user.local.name,
-            // email      : data.user.local.email,
-            // reputation : data.user.local.reputation,
-            // university : data.user.local.university,
-            // img        : data.user.local.img
+            name       : data.name,
+            email      : data.email,
+            reputation : data.reputation,
+            university : data.university,
+            img        : data.img
         };
+
+        this.itemsData = data.Items;
+        console.log(this.itemsData);
         
     } // EOF
 

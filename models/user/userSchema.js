@@ -18,7 +18,9 @@ const userSchema = new mongoose.Schema({
         passwordResetToken: String,
         passwordResetExpires: Date,
 
-        Items        : [
+        Items        : {
+
+            selling : [
                  {
                     name         : String,
                     info         : String,
@@ -28,8 +30,18 @@ const userSchema = new mongoose.Schema({
                     id           : String
                 }
             ],
-
-
+            bought : [
+                 {
+                    name         : String,
+                    info         : String,
+                    price        : Number,
+                    dateCreated  : Date,
+                    category     : String,
+                    id           : String
+                }
+            ],
+        }
+        ,
         profile: {
             name: String,
             gender: String,
