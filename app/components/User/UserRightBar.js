@@ -32,20 +32,22 @@ class UserRightBar extends React.Component {
         
         console.log(ref);
 
-        if(ref == 1){
-            console.log('in ref 1');
-            this.setState.classTab1 = "tab-pane fade in active";
-            this.setState.classTab_1 = "active"
-            this.setState.classTab0 = "tab-pane fade";
-            this.setState.classTab_0 = "";
+        UserRightBarActions.categoryClick(ref);              
 
-        }else if(ref == 0) {
-             console.log(' in ref 0');
-             this.setState.classTab0 = "tab-pane fade in active";  
-             this.setState.classTab1 = "tab-pane fade";
-             this.setState.classTab_0 = 'active';
-             this.setState.classTab_1 = "";
-        }
+        // if(ref == 1){
+        //     console.log('in ref 1');
+        //     this.setState.classTab1 = "tab-pane fade in active";
+        //     this.setState.classTab_1 = "active"
+        //     this.setState.classTab0 = "tab-pane fade";
+        //     this.setState.classTab_0 = "";
+
+        // }else if(ref == 0) {
+        //      console.log(' in ref 0');
+        //      this.setState.classTab0 = "tab-pane fade in active";  
+        //      this.setState.classTab1 = "tab-pane fade";
+        //      this.setState.classTab_0 = 'active';
+        //      this.setState.classTab_1 = "";
+        // }
         
     } // EOF
 

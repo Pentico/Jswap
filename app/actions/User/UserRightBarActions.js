@@ -7,7 +7,7 @@ import {assign} from 'underscore';
 class UserRightBarActions {
     constructor() {
         this.generateActions(
-
+            'categoryClick'
         );
     }
 }
