@@ -93,7 +93,7 @@ router.post('/AddItem', function(req, res, next){
             info : 'simple',
             price : '8546',
             dateCreated : Date.now(),
-            _id
+            
         }
         dbManagement.getCategory(data,dbUser);
         //dbManagement.addItem(data, dbUser);

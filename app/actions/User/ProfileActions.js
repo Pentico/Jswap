@@ -85,7 +85,7 @@ class ProfileActions {
 
         $.ajax({
             type:'POST',
-            url:'/UserServer/DeleteAccount'
+            url:'/UserServer/deleteAccount'
         })
             .done((data)=>{
                 this.actions.deleteAccountSuccess(data)

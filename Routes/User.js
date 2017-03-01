@@ -133,12 +133,15 @@ router.post('getAllItems', function(req, res, next) {
 
    router.post('/userDetails', function(req,res,next){
       if (req.user){
-          console.log(req.user.local.email);
+
             res.send({
                 email : req.user.local.email,
-                Items : req.user.local.Items,
-                reputation : req.user.local.reputation,
-                university : req.user.local.university
+                selling : req.user.local.Items,
+                buying  : req.user.local.BuyItems,
+                reputation : req.user.profile.reputation,
+                university : req.user.profile.university,
+                gender  : req.user.profile.gender,
+                name    : req.user.profile.name,
             });
         } else {
             res.send({
@@ -175,7 +178,7 @@ router.post('getAllItems', function(req, res, next) {
       })
   });  // EOF
 
-  router.post('updatePassword', function(req, res, next){
+  router.post('/updatePassword', function(req, res, next){
 
       dbUser.findById(req.user.id, (err, user) => {
           if(err){
@@ -195,7 +198,7 @@ router.post('getAllItems', function(req, res, next) {
 /**
  * Delete user Account
  */
-  router.post('deleteAccount', function(req, res, next) {
+  router.post('/deleteAccount', function(req, res, next) {
         dbUser.remove({_id: req.user.id}, (err) => {
             if(err) {
                 return next(err);
@@ -206,7 +209,7 @@ router.post('getAllItems', function(req, res, next) {
         });
   });
     
-router.get('reset password page', function(req, res, next){
+router.get('/reset_password_page', function(req, res, next){
 
     dbUser.findOne({ passwordResetToken: req.params.token})
           .where('passwordResetExpires').gt(Date.now())

@@ -23,8 +23,10 @@ class UserStore {
             img        : data.img
         };
 
-        this.itemsData = data.Items;
-        console.log(this.itemsData);
+        this.itemsData = {
+            selling : data.selling,
+            buying : data.buying
+        };
         
     } // EOF
 
