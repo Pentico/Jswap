@@ -75,7 +75,10 @@ class dbManagement {
                 'local.Items.$.name'    : data.name,
                 'local.Items.$.price'   : data.price,
                 'local.Items.$.category': data.category,
-                'local.Items.$.info'    : data.info
+                'local.Items.$.info'    : data.info,
+                'local.Items.$.imgPath0': data.imgPath0,
+                'local.Items.$.imgPath1': data.imgPath1,
+                'local.Items.$.imgPath2': data.imgPath2
 
             }}, function (err, item) {
                 if(err){
@@ -162,6 +165,7 @@ class dbManagement {
  */
     removeItem(data, dbName) {
 
+        // must delete the prictures here also TODO 
         dbName.update({
                'local.Items.id':data.id},{
                     $pull:{'local.Items':{id:data.id}}}, 

@@ -22,7 +22,10 @@ const userSchema = new mongoose.Schema({
                     info         : String,
                     price        : Number,
                     dateCreated  : Date,
-                    category     : String
+                    category     : String,
+                    imgPath0     : String,
+                    imgPath1     : String,
+                    imgPath2     : String
                 }
             ],
         BuyItems    : [

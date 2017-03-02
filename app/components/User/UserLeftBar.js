@@ -38,7 +38,6 @@ class UserLeftBar extends React.Component {
                     <h4>Email : {this.props.userData.email} </h4>
                     <h4>University : {this.props.userData.university} </h4>
                     <h4>Reputation : {this.props.userData.reputation} </h4>
-                    <img src={this.props.userData.img} className="profile" width="100" height="100"/>
                 </div>
             </div>
                 
