@@ -139,6 +139,7 @@ router.post('getAllItems', function(req, res, next) {
                 email : req.user.local.email,
                 selling : req.user.local.Items,
                 buying  : req.user.local.BuyItems,
+                img     :'/img/17.jpg'
                 // reputation : req.user.profile.reputation,
                 // university : req.user.profile.university,
                 // gender  : req.user.profile.gender,
