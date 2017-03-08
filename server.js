@@ -24,7 +24,7 @@ var bodyParser = require('body-parser');
 var userRoutes = require('./Routes/User');
 var mainRoutes = require('./Routes');
 var itemsRoutes = require('./Routes/Items');
-var uploadImage = require('./controllers/uploadData/uploadImage');
+
 var config = require('./config');
 
 
@@ -56,7 +56,7 @@ require('./controllers/uploadData/uploadImage')(app);
 app.use('/UserServer', userRoutes);
 app.use('/index', mainRoutes);
 app.use('/Items', itemsRoutes);
-app.use('/UploadPicture', uploadImage);
+// app.use('/UploadPicture', uploadImage);
 
 app.use(function(req, res) {
     Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
