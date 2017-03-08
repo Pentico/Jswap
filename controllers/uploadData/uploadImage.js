@@ -2,7 +2,7 @@ module.exports = (app) => {
   const multer = require('multer');
   var ext;
   const storage = multer.diskStorage({
-    destination: './uploads/',
+    destination: './public/img/${}',
     filename: function (req, file, cb) {
       // Mimetype stores the file type, set extensions according to filetype
       

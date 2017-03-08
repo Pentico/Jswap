@@ -13,6 +13,7 @@ var dbManagement = new dbUtils();
 var dbJswap = models.jswap;
 var dbUser = models.jUser;
 var UtilsApp = new UtilsApps();
+var app = express();
 
 
 
