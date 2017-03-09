@@ -35,9 +35,8 @@ router.post('/UploadPicture', function(req, res, next){
   const storage = multer.diskStorage({
     destination: '../uploads',
     filename : function(req, file, cb){
-
        // Mimetype stores the file type, set extensions according to filetype
-      
+      //*141*6328*
       switch (file.mimetype) {
         case 'image/jpeg':
           ext = '.jpeg';
@@ -56,7 +55,7 @@ router.post('/UploadPicture', function(req, res, next){
 
   const upload = multer({storage: storage});
 
-  app.post('/UploadPicture', upload.single('file'), function(req, res,next){
+  router.post('/UploadPicture', upload.single('file'), function(req, res,next){
     
     if (req.file && req.file.originalname) {
       console.log(`Received file ${req.file.originalname}`);
