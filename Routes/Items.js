@@ -30,6 +30,8 @@ router.get('/', function(req, res, next){
  
 router.post('/UploadPicture', function(req, res, next){
 
+  console.log(req.body);
+  console.log(req.params);
   const multer = require('multer');
   var ext;
   const storage = multer.diskStorage({
@@ -56,7 +58,7 @@ router.post('/UploadPicture', function(req, res, next){
   const upload = multer({storage: storage});
 
   router.post('/UploadPicture', upload.single('file'), function(req, res,next){
-    
+    console.log("Inner router");
     if (req.file && req.file.originalname) {
       console.log(`Received file ${req.file.originalname}`);
     }
