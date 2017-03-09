@@ -27,6 +27,9 @@ module.exports = (app) => {
     if (req.file && req.file.originalname) {
       console.log(`Received file ${req.file.originalname}`);
     }
+    console.log(req.params);
+    console.log(body._id);
+    
 
     res.send({ responseText: req.file.path }); // You can send any response to the user here
   });

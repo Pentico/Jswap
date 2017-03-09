@@ -22,11 +22,14 @@ class UploadItem extends React.Component {
         this.componentConfig = {
             iconFiletypes: ['.jpg', '.png', '.gif'],
             showFiletypeIcon: true,
-            postUrl: '/Items/UploadPicture'
+            postUrl: '/UploadPicture'
         };
         this.djsConfig = {
             addRemoveLinks: true,
-            acceptedFiles: "image/jpeg,image/png,image/gif"
+            acceptedFiles: "image/jpeg,image/png,image/gif",
+            params : {
+                _id : 5629
+            }
         };
         
     }
