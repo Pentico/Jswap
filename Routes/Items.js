@@ -58,7 +58,6 @@ router.post('/UploadPicture', function(req, res, next){
   const upload = multer({storage: storage});
 
   router.post('/UploadPicture', upload.single('file'), function(req, res,next){
-    console.log("Inner router");
     if (req.file && req.file.originalname) {
       console.log(`Received file ${req.file.originalname}`);
     }
