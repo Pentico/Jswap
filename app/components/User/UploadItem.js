@@ -48,24 +48,22 @@ class UploadItem extends React.Component {
     }
 
     handleFileAdded(file) {
+        console.log('file Added @handleFileAdded');
         // console.log(file);
         // this.state.files.push(file);
         // console.log(this.state.files.length);
         // console.log(this.state.midropzone);
     }
 
-    // onDrop(acceptedFiles){
+    onDrop(acceptedFiles){
 
-    //     console.log('on Drop call');
-    //     console.log(this.state.files);
-    //    this.state.files = acceptedFiles;
-    //     console.log(this.state.files);
-        
-    // //   UploadItemActions.loginAttempt({
-    // //       formdata:this.state.files
-    // //   })
+        console.log('on Drop call');
+     
+    //   UploadItemActions.loginAttempt({
+    //       formdata:this.state.files
+    //   })
 
-    // }
+    }
 
     initCallback (dropzone){
         console.log('in the initCallback');
@@ -95,7 +93,8 @@ class UploadItem extends React.Component {
                          
         // For a list of all possible events (there are many), see README.md!
         const eventHandlers = {
-            removedfile: this.removedfile
+            removedfile: this.removedfile,
+            onDrop : this.onDrop
         }
 
         return <DropzoneComponent config={config}
